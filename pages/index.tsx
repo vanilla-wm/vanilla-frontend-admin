@@ -1,3 +1,1 @@
-import React from 'react'
-
-export default () => <div>xxx</div>
+export { default } from '../next-pages/home'
