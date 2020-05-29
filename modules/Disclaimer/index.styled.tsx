@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Flex from '../../components/Flex'
+import Box from '../../components/Box'
 
 export const Container = styled(Flex)`
   width: 100%;
@@ -10,11 +11,25 @@ export const Container = styled(Flex)`
   align-items: center;
   justify-content: center;
 
-  color: rgba(0, 0, 0, 0.62);
-
-  background-color: ${({
+  color: ${({
     theme: {
       color: { primary },
     },
   }) => primary.base};
+
+  background-color: ${({
+    theme: {
+      color: { white },
+    },
+  }) => white[100]};
+`
+
+export const Description = styled(Box)`
+  margin: 0 16px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  overflow: hidden;
+  display: inline-block;
+  text-align: center;
 `

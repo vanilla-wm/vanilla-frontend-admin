@@ -7,7 +7,8 @@ type Props = {
 
 export default createGlobalStyle`
   body {
-  position: relative;
+    position: relative;
+    font-size: 16px;
     margin:0 auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -16,7 +17,9 @@ export default createGlobalStyle`
   
     ${({ theme }: Props) =>
       css`
-        font-family: ${theme.fontFamily.base};
+        * {
+          font-family: ${theme.fontFamily.base};
+        }
       `}
 
   }

@@ -4,10 +4,15 @@ import Flex from '../../components/Flex'
 
 export const Container = styled(Flex)`
   height: calc(100vh - 80px);
+  flex-direction: column;
+
+  ${({ theme: { media } }) => media.md`
+    flex-direction: row;
+  `}
 `
 
 export const SectionContent = styled(Box)`
-  padding: 40px;
+  margin: 40px;
   max-width: 530px;
   width: 100%;
 `

@@ -42,11 +42,21 @@ export default {
   color: {
     transparent: 'transparent',
     white: {
+      '100': 'rgba(255, 255, 255, 0.08)',
       '300': '#AEAEB2',
+      '400': '#8E8E93',
     },
     black: {
+      base: '#000000',
+      '200': '#3A3A3C',
       '100': '#2C2D2E',
       '400': '#636366',
+    },
+    green: {
+      base: '#7DCC3C',
+    },
+    orange: {
+      base: '#FF764A',
     },
     primary: {
       base: '#FEB611',

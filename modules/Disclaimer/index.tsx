@@ -1,4 +1,10 @@
 import React from 'react'
-import { Container } from './index.styled'
+import { Container, Description } from './index.styled'
 
-export default () => <Container>This is experimental project</Container>
+export default () => (
+  <Container>
+    <Description>
+      &nbsp;⚠️&nbsp;This is experimental project made by Cinnamon. &nbsp;⚠️&nbsp;
+    </Description>
+  </Container>
+)

@@ -2,7 +2,6 @@ import React from 'react'
 import BaseLayout from '../../layouts/BaseLayout'
 import Box from '../../components/Box'
 import Content from '../../modules/Content'
-import Disclaimer from '../../modules/Disclaimer'
 
 const Home = () => {
   const isAuthenticated = true
@@ -11,7 +10,6 @@ const Home = () => {
     <Box>
       {isAuthenticated ? (
         <>
-<Disclaimer/>
           <Content />
         </>
       ) : (

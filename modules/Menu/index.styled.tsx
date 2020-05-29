@@ -1,8 +1,9 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import Flex from '../../components/Flex'
-import Button from '../../components/Button'
+import Text from '../../components/Text'
 
 export const Container = styled(Flex)`
+  position: relative;
   height: 80px;
   justify-content: space-between;
   padding: 0 16px;
@@ -11,8 +12,26 @@ export const Container = styled(Flex)`
 export const Item = styled(Flex)`
   justify-content: space-between;
   align-items: center;
+  flex: 1 1 33%;
 
-  > ${Button} {
-    margin-left: 20px;
+  > ${Text} {
+    margin-right: 20px;
   }
+  ${({ center }) =>
+    center &&
+    css`
+      justify-content: center;
+    `} 
+
+    ${({ left }) =>
+      left &&
+      css`
+        justify-content: flex-start;
+      `}
+  
+    ${({ right }) =>
+      right &&
+      css`
+        justify-content: flex-end;
+      `}
 `
