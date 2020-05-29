@@ -3,31 +3,59 @@ import Text from '../../Text'
 import React from 'react'
 import CopyIcon from '../../../assets/CopyIcon'
 
-export default ({ label, isDisabled, placeholder,defaultValue, ...restProps }: any) => {
-  const [value, setValue] = React.useState(defaultValue)
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(value)
-  }
+export default React.forwardRef(
+  (
+    {
+      label,
+      hasCopy = true,
+      isDisabled,
+      placeholder,
+      defaultValue,
+      ...restProps
+    }: any,
+    ref
+  ) => {
+    const [value, setValue] = React.useState(defaultValue || '')
+    const [isCopied, setCopied] = React.useState(false)
+    const timeoutRef = React.useRef()
 
-  return (
-    <Container {...restProps}>
-      <Text mb={1} secondary isMuted>
-        {label}
-      </Text>
-      <InputContainer>
-        {isDisabled && (
-          <Copy onClick={copyToClipboard}>
-            <CopyIcon/>
-          </Copy>
+    const copyToClipboard = () => {
+      navigator.clipboard.writeText(value)
+      setCopied(true)
+
+      clearTimeout(timeoutRef.current)
+
+      // @ts-ignore
+      timeoutRef.current = setTimeout(() => setCopied(false), 5000)
+    }
+
+    return (
+      <Container {...restProps}>
+        <Text mb={1} secondary isMuted>
+          {label}
+        </Text>
+        <InputContainer>
+          {hasCopy && (
+            <Copy onClick={copyToClipboard}>
+              <CopyIcon />
+            </Copy>
+          )}
+          <InputComponent
+            ref={ref}
+            hasCopy={hasCopy}
+            disabled={isDisabled}
+            type="text"
+            placeholder={placeholder}
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+          />
+        </InputContainer>
+        {hasCopy && (
+          <Text isHidden={!isCopied} isNote mt="4px">
+            Copied!
+          </Text>
         )}
-        <InputComponent
-          disabled={isDisabled}
-          type="text"
-          placeholder={placeholder}
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-        />
-      </InputContainer>
-    </Container>
-  )
-}
+      </Container>
+    )
+  }
+)

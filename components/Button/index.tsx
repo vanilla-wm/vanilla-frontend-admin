@@ -8,13 +8,12 @@ export const BaseButton: any = styled.button`
   -webkit-tap-highlight-color: transparent;
   outline: none;
   border: none;
+  transition: background-color 0.2s ease-in-out, fill 0.2s ease-in-out,
+    color 0.2s ease-in-out;
 `
 export default styled(BaseButton)`
   padding: 14px 16px;
-  transition: background-color 0.2s ease-in-out, fill 0.2s ease-in-out,
-    color 0.2s ease-in-out;
-
-border-radius: 50px;
+  border-radius: 50px;
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
@@ -80,6 +79,28 @@ border-radius: 50px;
 
       &:hover {
         color: ${color.primary.base};
+      }
+    `}
+  
+  
+  ${({ orange, theme: { color } }) =>
+    orange &&
+    css`
+      &,
+      &:hover {
+        padding: 0;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 24px;
+        background-color: transparent;
+      }
+
+      &:hover {
+        color: ${color.orange.medium};
+      }
+
+      & {
+        color: ${color.orange.base};
       }
     `}
 `

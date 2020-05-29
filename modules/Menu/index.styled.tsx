@@ -33,5 +33,17 @@ export const Item = styled(Flex)`
       right &&
       css`
         justify-content: flex-end;
+      `}    
+
+    ${({ desktop, theme: { media } }) =>
+      desktop &&
+      css`
+        display: none;
+        ${media.md`display:flex`}
       `}
+      ${({ mobile, theme: { media } }) =>
+        mobile &&
+        css`
+          ${media.md`display:none`}
+        `}
 `

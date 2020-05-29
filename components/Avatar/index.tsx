@@ -6,6 +6,7 @@ export default styled(Box)`
   background-size: 32px 32px;
   height: 32px;
   width: 32px;
+  min-width: 32px;
   border-radius: 24px;
   border: 2px solid
     ${({

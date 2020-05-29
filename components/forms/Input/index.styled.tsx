@@ -1,10 +1,10 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import Box from '../../../components/Box'
 import { BaseButton } from '../../Button'
 
 export const Container = styled(Box)``
 
-export const InputComponent = styled.input`
+export const InputComponent: any = styled.input`
   box-sizing: border-box;
   outline: none;
   appearance: none;
@@ -29,10 +29,11 @@ export const InputComponent = styled.input`
   &::placeholder {
     color: ${({
       theme: {
-        color: { white },
+        color: { black },
       },
-    }) => white[400]};
+    }) => black[400]};
   }
+
   & {
     color: ${({
       theme: {
@@ -41,9 +42,12 @@ export const InputComponent = styled.input`
     }) => white[300]};
   }
 
-  &:disabled {
-    padding-right: 24px;
-  }
+  ${({ hasCopy }: any) =>
+    hasCopy &&
+    css`
+      pointer-events: none;
+      padding-right: 24px;
+    `} 
 `
 
 export const InputContainer = styled(Box)`
@@ -56,7 +60,6 @@ export const Copy = styled(BaseButton)`
   top: 0;
   bottom: 0;
   margin: 0 auto;
-  transition: color 0.2s ease-in-out;
   color: ${({ theme: { color } }) => color.primary.base};
   &:hover {
     color: ${({ theme: { color } }) => color.primary.medium};

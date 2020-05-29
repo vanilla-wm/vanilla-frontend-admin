@@ -57,6 +57,7 @@ export default {
     },
     orange: {
       base: '#FF764A',
+      medium: 'rgba(255, 118, 74, 0.4)',
     },
     primary: {
       base: '#FEB611',
