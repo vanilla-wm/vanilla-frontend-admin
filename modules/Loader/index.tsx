@@ -1,13 +1,23 @@
 import React from 'react'
 import { Container } from './index.styled'
+import Lottie from 'react-lottie'
+import loading from './loading.json'
 import Box from '../../components/Box'
-import Logo from '../../assets/Logo'
+import Text from '../../components/Text'
 
 export default () => (
   <Container>
+    <Lottie
+      options={{
+        animationData: loading,
+      }}
+      height={200}
+      width={200}
+    />
     <Box>
-      <Logo />
+      <Text isMono color="primary" mt="12px">
+        Loading...
+      </Text>
     </Box>
-      <Box mt="12px">Loading...</Box>
   </Container>
 )
