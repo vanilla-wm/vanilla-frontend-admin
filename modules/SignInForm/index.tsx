@@ -27,7 +27,7 @@ export default () => (
       <Section secondary>
         <Shape shape={shape1} left={0} top={0} />
         <Shape shape={shape2} float={7} right={0} top={0} />
-        <Shape shape={shape3} float={9} left={0} bottom={0} />
+        <Shape shape={shape3} float={9} left="270px" bottom="293px" />
         <Shape shape={shape4} float={4} right={0} bottom={0} />
       </Section>
     </Container>

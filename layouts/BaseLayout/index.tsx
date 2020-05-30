@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from './index.styled'
 import Menu from '../../modules/Menu'
-import Authentication from '../../modules/Authentication'
+import SignInForm from '../../modules/SignInForm'
 import Loader from '../../modules/Loader'
 import AuthContext from '../../config/AuthContext'
 import Disclaimer from '../../modules/Disclaimer'
@@ -17,7 +17,7 @@ export default ({ children }) => {
           {children}
         </>
       )}
-      {authState === 'unAuthenticated' && <Authentication />}
+      {authState === 'unAuthenticated' && <SignInForm />}
       {authState === 'authenticating' && <Loader />}
     </Container>
   )

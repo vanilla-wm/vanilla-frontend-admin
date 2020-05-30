@@ -17,7 +17,7 @@ export default ({ children }) => {
       setAuthState('unAuthenticated')
     } else {
       //request for verify
-      setTimeout(() => setAuthState('unAuthenticated'), 2000)
+      setTimeout(() => setAuthState('authenticated'), 2000)
     }
   }, [cookie])
 
