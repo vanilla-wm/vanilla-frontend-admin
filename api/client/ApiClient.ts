@@ -10,7 +10,7 @@ import ws from 'ws'
 
 type Props = {
   url: string
-  getToken: () => string
+  getToken?: () => string | null
 }
 
 export default class {
@@ -29,14 +29,14 @@ export default class {
   constructor({ url, getToken }: Props) {
     this.authLink = this.getAuthLink()
     this.wsLink = this.getWsLink()
-    this.getToken = getToken
+    this.getToken = getToken || (() => null)
 
     this.url = url
 
     this.httpLink = createHttpLink({
       uri: `https://${this.url}`,
       fetch,
-      credentials: "include",
+      credentials: 'include',
     })
 
     this.client = new ApolloClient({

@@ -3,9 +3,12 @@ import Input from '../../components/forms/Input'
 import React from 'react'
 import Button from '../../components/Button'
 import Controllers from './components/Controllers'
+import UserContext from '../../config/UserContext'
 
 export default () => {
-  const defaultPaymentPointer = '123456'
+  const { paymentPointer: defaultPaymentPointer } = React.useContext(
+    UserContext
+  )
   const [paymentPointer, setPaymentPointer] = React.useState(
     defaultPaymentPointer
   )
@@ -15,14 +18,22 @@ export default () => {
 
   return (
     <>
-      <Text primary mt={24}>
+      <Text md mt={32}>
         Payment pointer
       </Text>
-      <Text mt={12} mb={1} color="white">
+      <Text mt="8px" mb={1} color="white">
         Payment Pointers are a standardized identifier for payment accounts. In
         the same way that an email address provides.
       </Text>
-      <Button secondary>More Info</Button>
+      <Button
+        href="https://webmonetization.org/"
+        target="_blank"
+        as="a"
+        secondary
+        medium
+      >
+        More Info
+      </Button>
 
       <Input
         ref={inputRef}
@@ -39,7 +50,6 @@ export default () => {
         state={state}
         setState={setState}
         inputRef={inputRef}
-        defaultPaymentPointer={defaultPaymentPointer}
         paymentPointer={paymentPointer}
         setPaymentPointer={setPaymentPointer}
       />

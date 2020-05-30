@@ -9,11 +9,12 @@ import Burger from './components/Burger'
 import PageLinks from './components/PageLinks'
 import Logo from '../../assets/Logo'
 import AuthContext from '../../config/AuthContext'
+import UserContext from '../../config/UserContext'
 
 export default () => {
-  const username = 'Pelo telo vito chiko fiko kako lako pako'
   const { asPath } = useRouter()
   const { logout } = useContext(AuthContext)
+  const { name: username, photoPath } = useContext(UserContext)
 
   return (
     <Wrapper>
@@ -38,7 +39,7 @@ export default () => {
           </Text>
           <Link href="/">
             <Button as="a" onClick={logout}>
-              logout
+              Logout
             </Button>
           </Link>
         </Item>

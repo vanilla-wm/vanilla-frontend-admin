@@ -48,7 +48,7 @@ export default React.forwardRef(
             type="text"
             placeholder={placeholder}
             value={value}
-            onChange={(e) => onChange(e.target.value)}
+            onChange={(e) => onChange(e.target.value.trim())}
           />
         </InputContainer>
         {hasCopy && (

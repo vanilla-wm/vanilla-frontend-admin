@@ -1,11 +1,13 @@
 import styled from 'styled-components'
+import getConfig from 'next/config'
 import GoogleIcon from '../../assets/GoogleIcon'
 import React from 'react'
 import { BaseButton } from '../Button'
 import Box from '../Box'
+
 import Flex from '../Flex'
 
-const Container = styled(BaseButton)`
+const Button = styled(BaseButton)`
   display: flex;
   background-color: ${({ theme: { color } }) => color.primary.base};
   justify-content: center;
@@ -14,10 +16,9 @@ const Container = styled(BaseButton)`
   padding: 8px 16px 8px 8px;
   border-radius: 24px;
   margin-top: 32px;
-  
-  &:hover{
+
+  &:hover {
     background-color: ${({ theme: { color } }) => color.primary.medium};
-  
   }
 
   > div {
@@ -39,12 +40,17 @@ const IconWrapper = styled(Flex)`
   border-radius: 24px;
   justify-content: center;
 `
+export default () => {
+  const { publicRuntimeConfig } = getConfig()
 
-export default () => (
-  <Container>
-    <IconWrapper>
-      <GoogleIcon />
-    </IconWrapper>
-    <Box ml="14px">Sign in with Google</Box>
-  </Container>
-)
+  return (
+    <Flex>
+      <Button as="a" href={publicRuntimeConfig.AUTH_SERVER_URL}>
+        <IconWrapper>
+          <GoogleIcon />
+        </IconWrapper>
+        <Box ml="14px">Sign in with Google</Box>
+      </Button>
+    </Flex>
+  )
+}

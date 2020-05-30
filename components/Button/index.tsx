@@ -5,6 +5,7 @@ export const BaseButton: any = styled.button`
   cursor: pointer;
   appearance: none;
   background: transparent;
+  text-decoration: none;
   -webkit-tap-highlight-color: transparent;
   outline: none;
   border: none;
@@ -127,5 +128,23 @@ export default styled(BaseButton)`
         & {
           color: ${color.primary.base};
         }
+      `}
+
+      ${({ normal }) =>
+        normal &&
+        css`
+          &,
+          &:hover {
+            font-weight: normal;
+          }
+      `}
+      
+      ${({ medium }) =>
+        medium &&
+        css`
+          &,
+          &:hover {
+            font-weight: 500;
+          }
       `}
 `

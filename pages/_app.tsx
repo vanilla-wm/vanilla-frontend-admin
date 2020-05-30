@@ -3,7 +3,7 @@ import { AppProps } from 'next/app'
 import { ThemeProvider } from 'styled-components'
 import GlobalStyle from '../config/GlobalStyle'
 import theme from '../theme'
-import AuthenticationProvider from '../modules/AuthenticationProvider'
+import AppProvider from '../modules/AppProvider'
 
 const App = ({
   Component,
@@ -26,11 +26,11 @@ const App = ({
         rel="stylesheet"
       />
       <GlobalStyle theme={theme} />
-      <AuthenticationProvider>
+      <AppProvider>
         <Layout>
           <Component {...pageProps} />
         </Layout>
-      </AuthenticationProvider>
+      </AppProvider>
     </ThemeProvider>
   )
 }
