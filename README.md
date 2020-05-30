@@ -5,7 +5,7 @@
 
 ## How it Works
 * Vanilla Admin provides Web Monetization and content restriction features.
-* Content providers use Vanilla API for retreiving payments insights
+* Content providers use Vanilla API for retrieving payments insights
 
 
 ## Contribution
