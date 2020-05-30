@@ -13,7 +13,7 @@ const Container = styled(BaseButton)`
   color: #000000;
   padding: 8px 16px 8px 8px;
   border-radius: 24px;
-  margin-top: 45px;
+  margin-top: 32px;
   
   &:hover{
     background-color: ${({ theme: { color } }) => color.primary.medium};

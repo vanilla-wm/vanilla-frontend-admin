@@ -1,5 +1,5 @@
-import React from 'react'
-import { Container, Item } from './index.styled'
+import React, { useContext } from 'react'
+import { Container, Item, Wrapper } from './index.styled'
 import Text from '../../components/Text'
 import Button from '../../components/Button'
 import Avatar from '../../components/Avatar'
@@ -7,18 +7,21 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Burger from './components/Burger'
 import PageLinks from './components/PageLinks'
+import Logo from '../../assets/Logo'
+import AuthContext from '../../config/AuthContext'
 
 export default () => {
   const username = 'Pelo telo vito chiko fiko kako lako pako'
   const { asPath } = useRouter()
+  const { logout } = useContext(AuthContext)
 
   return (
-    <>
+    <Wrapper>
       <Container>
         <Item left>
           <Link href="/">
             <Button as="a" tertiary>
-              Logo
+              <Logo />
             </Button>
           </Link>
         </Item>
@@ -33,10 +36,14 @@ export default () => {
           <Text color="white" truncated>
             {username}
           </Text>
-          <Button>Logout</Button>
+          <Link href="/">
+            <Button as="a" onClick={logout}>
+              logout
+            </Button>
+          </Link>
         </Item>
         <Burger asPath={asPath} username={username} />
       </Container>
-    </>
+    </Wrapper>
   )
 }

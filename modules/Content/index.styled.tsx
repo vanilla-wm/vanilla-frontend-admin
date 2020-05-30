@@ -3,10 +3,10 @@ import Box from '../../components/Box'
 import Flex from '../../components/Flex'
 
 export const Container = styled(Flex)`
-  height: calc(100vh - 80px);
+  height: calc(100vh - 134px);
   flex-direction: column;
   width: 100%;
-  max-width: 1600px;
+  max-width: 1440px;
 
   ${({ theme: { media } }) => media.md`
     flex-direction: row;
@@ -14,7 +14,9 @@ export const Container = styled(Flex)`
 `
 
 export const SectionContent = styled(Box)`
-  margin: 40px;
+  margin: 40px 16px;
+  ${({ theme: { media } }) => media.md`  margin: 40px 32px;`};
+
   max-width: 530px;
   width: 100%;
 `

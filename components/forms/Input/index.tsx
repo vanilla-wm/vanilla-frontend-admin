@@ -11,11 +11,12 @@ export default React.forwardRef(
       isDisabled,
       placeholder,
       defaultValue,
+      value,
+      onChange,
       ...restProps
     }: any,
     ref
   ) => {
-    const [value, setValue] = React.useState(defaultValue || '')
     const [isCopied, setCopied] = React.useState(false)
     const timeoutRef = React.useRef()
 
@@ -47,7 +48,7 @@ export default React.forwardRef(
             type="text"
             placeholder={placeholder}
             value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={(e) => onChange(e.target.value)}
           />
         </InputContainer>
         {hasCopy && (

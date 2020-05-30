@@ -1,7 +1,14 @@
-import cookie from 'cookie'
+// @ts-ignore
+import Cookies from 'js-cookies'
 
 export const getCookie = () => {
   if (typeof window !== 'undefined') {
-    return cookie.parse(document.cookie)['vanilla-ssid']
+    return Cookies.getItem('vanilla-ssid')
+  }
+}
+
+export const removeCookie = () => {
+  if (typeof window !== 'undefined') {
+    return Cookies.removeItem('vanilla-ssid')
   }
 }

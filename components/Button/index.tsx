@@ -62,10 +62,13 @@ export default styled(BaseButton)`
   ${({ tertiary, isActive, theme: { color } }) =>
     tertiary &&
     css`
-      &,
-      &:hover {
+      & {
         padding: 0;
         margin: 14px 16px;
+      }
+
+      &,
+      &:hover {
         background: none;
         color: white;
       }

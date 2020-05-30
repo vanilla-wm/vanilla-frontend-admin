@@ -11,14 +11,14 @@ export default () => (
       isDisabled
       mt={16}
       label="Client ID"
-      defaultValue="xxxx"
+      value="xxxx"
       placeholder="A898as98asfgd98"
     />
     <Input
       mt={24}
       isDisabled
       label="Client Secret"
-      defaultValue="xxxx"
+      value="xxxx"
       placeholder="98asd989fdh9f4g56fgj"
     />
   </>

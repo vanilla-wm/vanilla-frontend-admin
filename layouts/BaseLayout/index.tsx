@@ -1,14 +1,13 @@
 import React from 'react'
 import { Container } from './index.styled'
 import Menu from '../../modules/Menu'
-import Disclaimer from '../../modules/Disclaimer'
 import Authentication from '../../modules/Authentication'
-import useAuth from '../../hooks/useAuth'
 import Loader from '../../modules/Loader'
+import AuthContext from '../../config/AuthContext'
+import Disclaimer from '../../modules/Disclaimer'
 
 export default ({ children }) => {
-  const { authState } = useAuth()
-
+  const { authState } = React.useContext(AuthContext)
   return (
     <Container>
       {authState === 'authenticated' && (

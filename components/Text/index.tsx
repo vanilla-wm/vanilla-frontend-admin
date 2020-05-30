@@ -56,11 +56,12 @@ export const getVariants = ({ primary, secondary, tertiary, note }) => css`
   }
   ${
     tertiary &&
-    `    padding: 0;
-        margin: 0;
-        font-weight: bold;
-        font-size: 48px;
-        line-height: 71px;`
+    `    
+      margin: 0;
+      font-weight: bold;
+      font-size: 48px;
+      line-height: 1;
+    `
   } 
 
   ${
@@ -79,7 +80,7 @@ export default styled(Box)`
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
-  line-height: 120%;
+  line-height: 140%;
   ${getVariants}
   ${getColors}
  
