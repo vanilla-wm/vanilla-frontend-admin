@@ -1,16 +1,24 @@
 import ApiClient from '../../../api/client'
-import { getUserInfo } from '../../../api/graphql/queries/getUserInfo'
+import getUserInfo from '../../../api/graphql/queries/getUserInfo'
 
 export default ({ onSuccess, onFailure }) => {
-  // ApiClient.query({
-  //   query: updatePaymentPointer,
-  // })
-
-  onSuccess({
-    name: 'John',
-    paymentPointer: 'jackie',
-    clientId: '1234',
-    clientSecret: '231312',
-    photoPath: '2131312',
+  ApiClient.query({
+    query: getUserInfo,
   })
+    .then(
+      ({
+        data: {
+          me: { name, clientId, clientSecret, picture, paymentPointer },
+        },
+      }) => {
+        onSuccess({
+          name,
+          clientId,
+          clientSecret,
+          paymentPointer: paymentPointer || '',
+          picture,
+        })
+      }
+    )
+    .catch(onFailure)
 }

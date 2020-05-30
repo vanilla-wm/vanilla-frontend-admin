@@ -4,5 +4,5 @@ yarn-error.log
 yarn.lock
 .idea
 out
-public/sw.js
-public/workbox-*
+sw.js
+workbox-*

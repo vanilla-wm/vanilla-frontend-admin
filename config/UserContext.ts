@@ -2,7 +2,7 @@ import React from 'react'
 
 type User = {
   name: string
-  photoPath: string
+  picture: string
   clientId: string
   clientSecret: string
   paymentPointer: string
@@ -11,7 +11,7 @@ type User = {
 
 export default React.createContext<User>({
   name: '',
-  photoPath: '',
+  picture: '',
   clientId: '',
   clientSecret: '',
   paymentPointer: '',

@@ -9,6 +9,7 @@ import Text from '../../../../components/Text'
 import Box from '../../../../components/Box'
 import { useMenu } from '../../hooks/useMenu'
 import PageLinks from '../PageLinks'
+import LogoutButton from '../../../../components/LogoutButton'
 
 export default ({ asPath, username }) => {
   const { isOpened, toggle } = useMenu(true)
@@ -34,7 +35,7 @@ export default ({ asPath, username }) => {
               </Text>
             </User>
             <Box mt="20px">
-              <Button>Logout</Button>
+              <LogoutButton />
             </Box>
           </UserInfo>
         </Menu>

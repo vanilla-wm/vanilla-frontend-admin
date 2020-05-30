@@ -27,11 +27,15 @@ const pluginCompose = ({ webpackCallback, configCallBack }) => (
 }
 
 const devConfig = {
-  AUTH_SERVER_URL: 'https://vanilla.romcok.com/auth/login',
+  AUTH_SERVER_URL: 'https://vanilla.romcok.com/auth/google',
+  GRAPHQL_SERVER_URI: 'vanilla.romcok.com/graphql',
+  DOMAIN: ".romcok.com"
 }
 
 const productionConfig = {
-  AUTH_SERVER_URL: 'https://vanilla.romcok.com/auth/login',
+  AUTH_SERVER_URL: 'https://vanilla.so/auth/google',
+  GRAPHQL_SERVER_URI: 'vanilla.so/graphql',
+  DOMAIN: ".vanilla.so"
 }
 
 const getNextConfig = ({

@@ -1,7 +1,13 @@
-export default ({ paymentPointer, setCurrentPaymentPointer }) => {
-  // ApiClient.query({
-  //   query: updatePaymentPointer,
-  // })
+import updatePaymentPointer from '../../../api/graphql/queries/updatePaymentPointer'
+import ApiClient from '../../../api/client'
 
-  setCurrentPaymentPointer(paymentPointer)
+export default ({ paymentPointer, setCurrentPaymentPointer }) => {
+  ApiClient.query({
+    query: updatePaymentPointer,
+    variables: {
+      paymentPointer,
+    },
+  })
+    .then(() => setCurrentPaymentPointer(paymentPointer))
+    .catch(() => ({}))
 }

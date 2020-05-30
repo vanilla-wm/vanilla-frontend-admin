@@ -6,6 +6,7 @@ import { BaseButton } from '../Button'
 import Box from '../Box'
 
 import Flex from '../Flex'
+import { getCookie } from '../../utils/cookie'
 
 const Button = styled(BaseButton)`
   display: flex;
@@ -42,10 +43,26 @@ const IconWrapper = styled(Flex)`
 `
 export default () => {
   const { publicRuntimeConfig } = getConfig()
+  const interval = React.useRef(null)
+
+  const singIn = () => {
+    window.open(
+      publicRuntimeConfig.AUTH_SERVER_URL,
+      'popup',
+      'width=600,height=600'
+    )
+    clearInterval(interval.current)
+
+    interval.current = setInterval(() => {
+      if (getCookie()) {
+        window.location.reload()
+      }
+    }, 1000)
+  }
 
   return (
     <Flex>
-      <Button as="a" href={publicRuntimeConfig.AUTH_SERVER_URL}>
+      <Button as="a" onClick={singIn}>
         <IconWrapper>
           <GoogleIcon />
         </IconWrapper>

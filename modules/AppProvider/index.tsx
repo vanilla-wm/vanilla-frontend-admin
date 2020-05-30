@@ -21,7 +21,7 @@ export default ({ children }) => {
     } else {
       loadUser({
         onSuccess: setUser,
-        onFailure: logout
+        onFailure: logout,
       })
 
       //request for verify
