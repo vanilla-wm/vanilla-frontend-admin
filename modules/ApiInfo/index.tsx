@@ -4,7 +4,7 @@ import React from 'react'
 
 export default () => (
   <>
-    <Text primary mt={24}>
+    <Text md mt={24}>
       API Credentials
     </Text>
     <Input

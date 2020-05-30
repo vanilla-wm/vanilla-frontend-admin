@@ -14,7 +14,7 @@ export default () => (
       <Section>
         <Box>
           <Logo />
-          <Text tertiary isMono padding="24px 0 16px 0">
+          <Text xxl isMono padding="24px 0 16px 0">
             Vanilla Admin
           </Text>
           <Text color="white" maxWidth="400px">

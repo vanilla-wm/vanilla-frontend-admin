@@ -1,4 +1,3 @@
-// @ts-ignore
 import Cookies from 'js-cookies'
 
 export const getCookie = () => {

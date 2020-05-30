@@ -1,15 +1,26 @@
 import Text from '../../components/Text'
 import React from 'react'
-import { Container } from './index.styled'
+import { Container, Footer } from './index.styled'
 import Box from '../../components/Box'
+import Button from '../../components/Button'
 
 export default () => (
-  <Container>
-    <Box mt="50px">
-      <Text tertiary isMono as="h1">
-        Coming soon
+  <>
+    <Container>
+      <Box mt="50px">
+        <Text xl color="primary" isMono as="h1">
+          Coming soon
+        </Text>
+      </Box>
+      <Text color="white" lg mt="16px">
+        Unfortunately, this feature is not ready for you yet.
       </Text>
-    </Box>
-    <Text mt="32px">Bla bla bla bla text</Text>
-  </Container>
+    </Container>
+    <Footer as="footer">
+      <Text lg semibold color="black" mr="24px">
+        Do you want to help?
+      </Text>
+      <Button inversed>Contact us</Button>
+    </Footer>
+  </>
 )

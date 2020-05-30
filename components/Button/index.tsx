@@ -106,4 +106,26 @@ export default styled(BaseButton)`
         color: ${color.orange.base};
       }
     `}
+
+    ${({ inversed, theme: { color } }) =>
+      inversed &&
+      css`
+        &,
+        &:hover {
+          font-family: ${({ theme: { fontFamily } }) => fontFamily.secondary};
+          padding: 14px 34px;
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 140%;
+          background-color: black;
+        }
+
+        &:hover {
+          background-color: ${color.black[100]};
+        }
+
+        & {
+          color: ${color.primary.base};
+        }
+      `}
 `

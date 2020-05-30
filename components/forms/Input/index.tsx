@@ -32,7 +32,7 @@ export default React.forwardRef(
 
     return (
       <Container {...restProps}>
-        <Text mb={1} secondary color="white">
+        <Text mb={1} sm color="white">
           {label}
         </Text>
         <InputContainer>
@@ -52,7 +52,7 @@ export default React.forwardRef(
           />
         </InputContainer>
         {hasCopy && (
-          <Text isHidden={!isCopied} note color="primary" mt="4px">
+          <Text isHidden={!isCopied} xs color="primary" mt="4px">
             Copied!
           </Text>
         )}

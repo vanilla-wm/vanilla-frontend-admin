@@ -7,6 +7,13 @@ export const getColors = ({ color: selectedColor, theme: { color } }) => css`
     `
         color: ${color.green.base};
   `
+  } 
+  
+  ${
+    selectedColor === 'black' &&
+    `
+        color: ${color.black.base};
+  `
   }
   
   ${
@@ -37,35 +44,62 @@ export const getColors = ({ color: selectedColor, theme: { color } }) => css`
   }
 `
 
-export const getVariants = ({ primary, secondary, tertiary, note }) => css`
+export const getVariants = ({
+  xs,
+  md,
+  sm,
+  xl,
+  lg,
+  xxl,
+  theme: { media },
+}) => css`
   ${
-    primary &&
+    md &&
     `
-           font-weight: 600;
+      font-weight: 600;
       font-size: 18px;
       line-height: 21px;
   `
   }
   ${
-    secondary &&
+    sm &&
     `
-  font-weight: 500;
+      font-weight: 500;
       font-size: 14px;
       line-height: 16px;
   `
   }
   ${
-    tertiary &&
-    `    
+    xxl &&
+    css`
       margin: 0;
       font-weight: bold;
-      font-size: 48px;
+
+      font-size: 36px;
       line-height: 1;
+      ${media.md`font-size: 48px;`}
+    `
+  } 
+  ${
+    xl &&
+    css`
+      margin: 0;
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 53px;
+    `
+  } 
+  ${
+    lg &&
+    css`
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 140%;
     `
   } 
 
   ${
-    note &&
+    xs &&
     `        
     transition: opacity 0.3s ease-in-out;
     opacity: 1;
@@ -94,7 +128,13 @@ export default styled(Box)`
     medium &&
     css`
       font-weight: 500;
-    `}
+    `}  
+
+  ${({ semibold }) =>
+    semibold &&
+    css`
+      font-weight: 600;
+  `}
   
   ${({ bold }) =>
     bold &&

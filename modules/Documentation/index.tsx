@@ -3,7 +3,7 @@ import Text from '../../components/Text'
 import { Snippet } from './index.styled'
 
 const SubHeading = (props) => <Text mt="6px" {...props} />
-const Heading = (props) => <Text primary mt="24px" {...props} />
+const Heading = (props) => <Text md mt="24px" {...props} />
 
 export default () => (
   <>
