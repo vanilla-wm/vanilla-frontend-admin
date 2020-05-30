@@ -6,7 +6,7 @@ import Box from '../../components/Box'
 export default () => (
   <Container>
     <Box mt="50px">
-      <Text isTitle as="h1">
+      <Text tertiary isMono as="h1">
         Coming soon
       </Text>
     </Box>

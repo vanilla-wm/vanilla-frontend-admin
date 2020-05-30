@@ -1,5 +1,6 @@
 import React from 'react'
 import BaseLayout from '../../layouts/BaseLayout'
+import SplitLayout from '../../layouts/SplitLayout'
 import Box from '../../components/Box'
 import Content from '../../modules/Content'
 
@@ -9,9 +10,9 @@ const Home = () => {
   return (
     <Box>
       {isAuthenticated ? (
-        <>
+        <SplitLayout>
           <Content />
-        </>
+        </SplitLayout>
       ) : (
         <div>loading</div>
       )}

@@ -3,11 +3,11 @@ import Input from '../../components/forms/Input'
 import React from 'react'
 import Button from '../../components/Button'
 import EditIcon from '../../assets/EditIcon'
-import { FormAction } from './index.styled'
 import Box from '../../components/Box'
 import Flex from '../../components/Flex'
 import CheckIcon from '../../assets/CheckIcon'
 import CloseIcon from '../../assets/CloseIcon'
+import Controller from './components/Controller'
 
 export default () => {
   const [state, setState] = React.useState('init')
@@ -35,36 +35,27 @@ export default () => {
         placeholder="Add payment pointer"
       />
       {state === 'init' && (
-        <Button
-          secondary
+        <Controller
+          icon={<EditIcon />}
           onClick={() => {
             setState('edit')
             // @ts-ignore
             setTimeout(() => inputRef.current.focus(), 10)
           }}
         >
-          <FormAction>
-            <EditIcon />
-            <Box ml="6px">Edit</Box>
-          </FormAction>
-        </Button>
+          Edit
+        </Controller>
       )}
       {state === 'edit' && (
         <Flex>
           <Box mr="32px">
-            <Button secondary onClick={init}>
-              <FormAction>
-                <CheckIcon />
-                <Box ml="6px">Save</Box>
-              </FormAction>
-            </Button>
+            <Controller icon={<CheckIcon />} onClick={init}>
+              Save
+            </Controller>
           </Box>
-          <Button secondary orange onClick={init}>
-            <FormAction>
-              <CloseIcon />
-              <Box ml="6px">Cancel</Box>
-            </FormAction>
-          </Button>
+          <Controller orange icon={<CloseIcon />} onClick={init}>
+            Cancel
+          </Controller>
         </Flex>
       )}
     </>

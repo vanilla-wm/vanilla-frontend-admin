@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import Box from '../../../components/Box'
-import Flex from '../../../components/Flex'
+import Box from '../../../../components/Box'
+import Flex from '../../../../components/Flex'
 
 export const Menu = styled(Box)`
   position: fixed;

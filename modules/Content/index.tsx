@@ -7,18 +7,18 @@ import Documentation from '../Documentation'
 
 export default () => (
   <Container>
-    <Section>
-      <SectionContent>
-        <SectionBox>Setup</SectionBox>
-        <ApiInfo />
-        <PaymentPointerForm />
-      </SectionContent>
-    </Section>
-    <Section secondary>
-      <SectionContent>
-        <SectionBox>Documentation</SectionBox>
-        <Documentation />
-      </SectionContent>
-    </Section>
+      <Section>
+        <SectionContent>
+          <SectionBox>Setup</SectionBox>
+          <ApiInfo />
+          <PaymentPointerForm />
+        </SectionContent>
+      </Section>
+      <Section secondary>
+        <SectionContent>
+          <SectionBox>Documentation</SectionBox>
+          <Documentation />
+        </SectionContent>
+      </Section>
   </Container>
 )

@@ -19,38 +19,38 @@ export default () => (
     <Heading>CocoaPods</Heading>
     <SubHeading>Add the pod to your Podfile:</SubHeading>
     <Snippet>
-      <Text green inline>
+      <Text color="green" inline>
         import
       </Text>{' '}
-      <Text orange inline>
+      <Text color="orange" inline>
         Lottie
       </Text>
     </Snippet>
     <Text>Add the pod to your Podfile:</Text>
     <Snippet>
-      <Text green inline>
+      <Text color="green" inline>
         import
       </Text>{' '}
-      <Text orange inline>
+      <Text color="orange" inline>
         {' '}
         Lottie
       </Text>
     </Snippet>{' '}
     <Snippet>
       <Text>
-        <Text green inline>
+        <Text color="green" inline>
           import
         </Text>{' '}
-        <Text orange inline>
+        <Text color="orange" inline>
           {' '}
           Lottie
         </Text>
       </Text>
       <Text>
-        <Text green inline>
+        <Text color="green" inline>
           import
         </Text>{' '}
-        <Text orange inline>
+        <Text color="orange" inline>
           {' '}
           Lottie
         </Text>
