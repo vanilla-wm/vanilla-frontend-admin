@@ -13,7 +13,7 @@ import LogoutButton from '../../components/LogoutButton'
 
 export default () => {
   const { asPath } = useRouter()
-  const { name: username, picture } = useContext(UserContext)
+  const { name, picture } = useContext(UserContext)
 
   return (
     <Wrapper>
@@ -31,11 +31,11 @@ export default () => {
         <Item right desktop>
           <Avatar picture={picture} mr="8px" />
           <Text color="white" truncated>
-            {username}
+            {name}
           </Text>
           <LogoutButton />
         </Item>
-        <Burger asPath={asPath} username={username} />
+        <Burger asPath={asPath} username={name} picture={picture} />
       </Container>
     </Wrapper>
   )

@@ -4,7 +4,7 @@ import Text from '../../components/Text'
 import Button from '../../components/Button'
 import Box from '../../components/Box'
 
-export const Wrapper =styled(Box)`
+export const Wrapper = styled(Box)`
   padding: 0 16px;
   ${({ theme: { media } }) => media.md`padding: 0 32px;`};
 `
@@ -44,7 +44,7 @@ export const Item = styled(Flex)`
       right &&
       css`
         justify-content: flex-end;
-         ${Button} {
+        ${Button} {
           margin: 0;
         }
       `}    
