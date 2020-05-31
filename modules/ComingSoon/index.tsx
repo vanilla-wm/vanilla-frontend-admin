@@ -20,7 +20,9 @@ export default () => (
       <Text lg semibold color="black" mr="24px">
         Do you want to help?
       </Text>
-      <Button inversed>Contact us</Button>
+      <Button inversed as="a" href="mailto:contact@vanilla.so" target="_blank">
+        Contact us
+      </Button>
     </Footer>
   </>
 )

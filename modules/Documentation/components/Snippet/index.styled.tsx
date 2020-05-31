@@ -6,7 +6,7 @@ export const Container = styled(Box)`
   background-color: ${({ theme: { color } }) => color.black[100]};
   border-radius: 7px;
   overflow-x: auto;
-  white-space: nowrap;
+  white-space: pre;
   color: ${({ theme: { color } }) => color.orange.base};
   .token {
     line-height: 160%;

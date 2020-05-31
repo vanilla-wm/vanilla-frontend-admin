@@ -30,8 +30,7 @@ export const Section = styled(Flex)`
     css`
       background-color: black;
       ${media.md`background-color: transparent;
-        flex: 1 1 50%;
-      
+        width: 50%;
       `}
     `}
 

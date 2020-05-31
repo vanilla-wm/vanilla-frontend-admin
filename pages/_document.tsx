@@ -1,6 +1,7 @@
 import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
+import getConfig from 'next/config'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -32,21 +33,51 @@ export default class MyDocument extends Document {
   render() {
     // @ts-ignore
     const { styleTags } = this.props
+    const {
+      publicRuntimeConfig: { BASE_PATH },
+    } = getConfig()
 
     return (
       <html lang="en" dir="ltr">
         <Head>
-          <meta charSet="utf-8" />
-          <meta name="google" content="nositelinkssearchbox" />
-          <meta name="format-detection" content="telephone=no" />
-          <meta name="google" content="notranslate" />
           <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no, viewport-fit=cover"
+            name="description"
+            content="Verify payment streams before showing exclusive content to users."
           />
-          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-          <meta name="robots" content="index,follow" />
-          <meta name="googlebot" content="index,follow" />
+          <meta
+            name="keywords"
+            content="Content, Creators, Cinnamon, Web, Monetization, Web Monetization, Interledger, Grant for the Web, Grant, Coil, Payments"
+          />
+          <meta name="robots" content="index, follow" />
+          <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+          <meta name="language" content="English" />
+          <meta name="monetization" content="$ilp.uphold.com/2Na6ff4BNePb" />
+
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content={BASE_PATH} />
+          <meta
+            property="og:title"
+            content="Vanilla - Web Monetization Verifier"
+          />
+          <meta
+            property="og:description"
+            content="Verify payment streams before showing exclusive content to users."
+          />
+          <meta property="og:image" content={`${BASE_PATH}/images/twitter.png`} />
+
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:url" content={BASE_PATH} />
+          <meta
+            property="twitter:title"
+            content="Vanilla - Web Monetization Verifier"
+          />
+          <meta
+            property="twitter:description"
+            content="Verify payment streams before showing exclusive content to users."
+          />
+          <meta property="twitter:image" content={`${BASE_PATH}/images/twitter.png`} />
+
+          {/*Icons*/}
           <link
             href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap"
             rel="stylesheet"
@@ -126,8 +157,26 @@ export default class MyDocument extends Document {
           />
           <link rel="manifest" href="/manifest.json" />
           <meta name="msapplication-TileColor" content="#ffffff" />
-          <meta name="msapplication-TileImage" content="/icons/ms-icon-144x144.png" />
-          <meta name="theme-color" content="#ffffff" />
+          <meta
+            name="msapplication-TileImage"
+            content="/icons/ms-icon-144x144.png"
+          />
+          <meta name="theme-color" content="#000000" />
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-168106177-1"
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              
+              gtag('config', 'UA-168106177-1');
+          `,
+            }}
+          />
           {styleTags}
         </Head>
         <Main />

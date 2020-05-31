@@ -4,8 +4,7 @@ import { ThemeProvider } from 'styled-components'
 import GlobalStyle from '../config/GlobalStyle'
 import theme from '../theme'
 import AppProvider from '../modules/AppProvider'
-import { DefaultSeo } from 'next-seo/lib'
-import getConfig from 'next/config'
+import Head from 'next/head'
 
 const App = ({
   Component,
@@ -16,36 +15,13 @@ const App = ({
   }
 }) => {
   const Layout = Component.Layout || (({ children }) => children)
-  const {
-    publicRuntimeConfig: { BASE_PATH },
-  } = getConfig()
 
   return (
     <>
-      <DefaultSeo
-        title="Vanilla Admin"
-        description="Verify payment stream before sending content to the user via Vanilla API."
-        openGraph={{
-          type: 'website',
-          locale: 'en_US',
-          title: 'Vanilla Admin',
-          description:
-            'Verify payment stream before sending content to the user via Vanilla API.',
-          url: BASE_PATH,
-          images: [
-            {
-              url: `${BASE_PATH}/images/og-image.jpg`,
-              width: 800,
-              height: 600,
-              alt: 'Og Image Alt',
-            },
-          ],
-        }}
-        twitter={{
-          site: '@CinnamonVideo',
-          cardType: 'summary_large_image',
-        }}
-      />
+      <Head>
+        <title>Vanilla - Web Monetization Verifier</title>
+        <meta name="title" content="Vanilla - Web Monetization Verifier" />
+      </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle theme={theme} />
         <AppProvider>

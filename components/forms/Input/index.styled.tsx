@@ -46,7 +46,7 @@ export const InputComponent: any = styled.input`
     hasCopy &&
     css`
       pointer-events: none;
-      padding-right: 24px;
+      padding-right: 52px;
     `} 
 `
 

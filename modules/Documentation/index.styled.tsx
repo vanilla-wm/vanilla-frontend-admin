@@ -14,16 +14,23 @@ export const Snippet = styled(Box)`
 `
 
 export const Container = styled(Box)`
-  code {
-    border-radius: 8px;
-    padding: 2px 4px;
-    background-color: ${({
-      theme: {
-        color: { black },
-      },
-    }) => black[100]};
-  }
   .code-toolbar .toolbar {
     display: none;
   }
+`
+
+export const Code = styled.code`
+  border-radius: 8px;
+  padding: 2px 4px;
+  background-color: ${({
+    theme: {
+      color: { black },
+    },
+  }) => black[100]};
+
+  color: ${({
+    theme: {
+      color: { primary },
+    },
+  }) => primary.base};
 `

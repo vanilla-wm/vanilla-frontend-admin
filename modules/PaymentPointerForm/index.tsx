@@ -36,20 +36,20 @@ export default () => {
       <Text md mt={32} as="h3">
         Payment Pointer
       </Text>
-      <Text mt="8px" mb={1} color="white">
+      <Text mt="8px" mb={1} >
         A payment pointer is a Web Monetization Wallet address, that we use to
-        deliver payments to you. Learn more about Web Monetization Wallets.
+        deliver payments to you. Learn more about{' '}
+        <Button
+          medium
+          secondary
+          as="a"
+          href="https://webmonetization.org/#wallets"
+          target="_blank"
+        >
+          Web Monetization Wallets
+        </Button>
+        .
       </Text>
-      <Button
-        href="https://webmonetization.org/"
-        target="_blank"
-        as="a"
-        secondary
-        medium
-      >
-        More Info
-      </Button>
-
       <Input
         ref={inputRef}
         mt={24}
