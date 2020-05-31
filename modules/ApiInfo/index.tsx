@@ -8,7 +8,7 @@ export default () => {
 
   return (
     <>
-      <Text md mt={24}>
+      <Text md mt={24} as="h3">
         API Credentials
       </Text>
       <Input isDisabled mt={16} label="Client ID" value={clientId} />

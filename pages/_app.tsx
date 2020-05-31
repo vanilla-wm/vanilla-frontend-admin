@@ -5,6 +5,7 @@ import GlobalStyle from '../config/GlobalStyle'
 import theme from '../theme'
 import AppProvider from '../modules/AppProvider'
 import { DefaultSeo } from 'next-seo/lib'
+import getConfig from 'next/config'
 
 const App = ({
   Component,
@@ -15,6 +16,9 @@ const App = ({
   }
 }) => {
   const Layout = Component.Layout || (({ children }) => children)
+  const {
+    publicRuntimeConfig: { BASE_PATH },
+  } = getConfig()
 
   return (
     <>
@@ -23,13 +27,22 @@ const App = ({
         description="Verify payment stream before sending content to the user via Vanilla API."
         openGraph={{
           type: 'website',
-          locale: 'en_IE',
-          url: 'https://admin.vanilla.so',
-          site_name: 'Vanilla Admin',
+          locale: 'en_US',
+          title: 'Vanilla Admin',
+          description:
+            'Verify payment stream before sending content to the user via Vanilla API.',
+          url: BASE_PATH,
+          images: [
+            {
+              url: `${BASE_PATH}/images/og-image.jpg`,
+              width: 800,
+              height: 600,
+              alt: 'Og Image Alt',
+            },
+          ],
         }}
         twitter={{
-          handle: '@handle',
-          site: '@site',
+          site: '@CinnamonVideo',
           cardType: 'summary_large_image',
         }}
       />

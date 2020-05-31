@@ -33,12 +33,12 @@ export default () => {
 
   return (
     <>
-      <Text md mt={32}>
-        Payment pointer
+      <Text md mt={32} as="h3">
+        Payment Pointer
       </Text>
       <Text mt="8px" mb={1} color="white">
-        Payment Pointers are a standardized identifiers for payment accounts. In
-        the same way that an email address provides.
+        A payment pointer is a Web Monetization Wallet address, that we use to
+        deliver payments to you. Learn more about Web Monetization Wallets.
       </Text>
       <Button
         href="https://webmonetization.org/"

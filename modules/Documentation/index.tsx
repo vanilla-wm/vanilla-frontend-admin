@@ -6,7 +6,7 @@ import { Container } from './index.styled'
 import UserContext from '../../config/UserContext'
 import getConfig from 'next/config'
 
-const Heading = (props) => <Text md mt="24px" {...props} />
+const Heading = (props) => <Text as="h3" md mt="24px" {...props} />
 
 export default () => {
   const { clientId, clientSecret } = React.useContext(UserContext)
@@ -17,11 +17,14 @@ export default () => {
   return (
     <Container>
       <Text mt={24}>
+        Vanilla provides Web Monetization Verification features for applications that require higher level of flexibility.
+
+
         Vanilla provides{' '}
         <Text as="span" color="primary">
-          Web Monetization Content Protection
+          Web Monetization
         </Text>{' '}
-        features for applications that require higher level of flexibility.
+        Verification features for applications that require higher level of flexibility.
       </Text>
       <Heading>How it works</Heading>
       <Text mt={24}>
@@ -40,7 +43,7 @@ export default () => {
       </Text>
       <Text>
         After successful set up of the web monetized wallet. Get your payment
-        pointer and create your meta tag.
+        pointer.
       </Text>
       <Text  color="orange" medium mt="12px">
         Add your payment pointer to{' '}
@@ -79,7 +82,7 @@ export default () => {
         Endpoints provide interface for retrieving information about payments on
         your back-end server. Vanilla currently provides GraphQL API.
       </Text>
-      <Text color="orange" mt="12px" medium>
+      <Text mt="12px" medium>
         Authentication
       </Text>
       <Text mt="4px">
@@ -110,7 +113,7 @@ export default () => {
 Authorization: Basic ${btoa(`${clientId}:${clientSecret}`)}`}
         language="js"
       />
-      <Text color="orange" mt="12px" medium>
+      <Text mt="12px" medium>
         Endpoint Proof
       </Text>
       <Text mt="4px" medium>

@@ -9,14 +9,14 @@ export default () => (
   <Container>
       <Section>
         <SectionContent>
-          <SectionBox>Setup</SectionBox>
+          <SectionBox as="h2">Setup</SectionBox>
           <ApiInfo />
           <PaymentPointerForm />
         </SectionContent>
       </Section>
       <Section secondary>
         <SectionContent>
-          <SectionBox>Documentation</SectionBox>
+          <SectionBox as="h2">Documentation</SectionBox>
           <Documentation />
         </SectionContent>
       </Section>

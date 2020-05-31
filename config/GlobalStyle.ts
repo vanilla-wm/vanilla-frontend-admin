@@ -21,6 +21,10 @@ export default createGlobalStyle`
           font-family: ${theme.fontFamily.base};
         }
       `}
-
+    
+    h2,h3{
+      padding: 0;
+      margin:0;
+    }
   }
 `

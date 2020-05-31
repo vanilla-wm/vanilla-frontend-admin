@@ -18,8 +18,8 @@ export default () => (
           Vanilla Admin
         </Text>
         <Text color="white" maxWidth="400px">
-          Manage your account, analyse Web Monetization transactions  or split
-          the revenue with other content creators.
+          Manage your account, analyse Web Monetization transactions,
+          or split the revenue with other content creators
         </Text>
         <SignInButton />
       </Box>
