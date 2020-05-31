@@ -6,6 +6,7 @@ export const BaseButton: any = styled.button`
   appearance: none;
   background: transparent;
   text-decoration: none;
+  border-radius: 0;
   -webkit-tap-highlight-color: transparent;
   outline: none;
   border: none;
@@ -60,12 +61,13 @@ export default styled(BaseButton)`
       }
     `}
 
-  ${({ tertiary, isActive, theme: { color } }) =>
+  ${({ tertiary, isActive, noMargin, theme: { color } }) =>
     tertiary &&
     css`
       & {
         padding: 0;
-        margin: 14px 16px;
+        border-radius: 0;
+        ${!noMargin ? `margin: 14px 16px;` : `margin:0;`}
       }
 
       &,
@@ -137,7 +139,7 @@ export default styled(BaseButton)`
           &:hover {
             font-weight: normal;
           }
-      `}
+        `}
       
       ${({ medium }) =>
         medium &&
@@ -146,5 +148,6 @@ export default styled(BaseButton)`
           &:hover {
             font-weight: 500;
           }
-      `}
+        `}
+ 
 `

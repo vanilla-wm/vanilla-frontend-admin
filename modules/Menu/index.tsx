@@ -20,7 +20,7 @@ export default () => {
       <Container>
         <Item left>
           <Link href="/">
-            <Button as="a" tertiary>
+            <Button as="a" tertiary noMargin>
               <Logo />
             </Button>
           </Link>
@@ -35,7 +35,7 @@ export default () => {
           </Text>
           <LogoutButton />
         </Item>
-        <Burger asPath={asPath} username={name} picture={picture} />
+        <Burger asPath={asPath} name={name} picture={picture} />
       </Container>
     </Wrapper>
   )

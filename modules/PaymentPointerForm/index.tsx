@@ -4,14 +4,29 @@ import React from 'react'
 import Button from '../../components/Button'
 import Controllers from './components/Controllers'
 import UserContext from '../../config/UserContext'
+import updatePaymentPointer from './actions/updatePaymentPointer'
 
 export default () => {
-  const { paymentPointer: defaultPaymentPointer } = React.useContext(
-    UserContext
-  )
+  const {
+    paymentPointer: currentPaymentPointer,
+    setPaymentPointer: setCurrentPaymentPointer,
+  } = React.useContext(UserContext)
   const [paymentPointer, setPaymentPointer] = React.useState(
-    defaultPaymentPointer
+    currentPaymentPointer
   )
+
+  const init = () => setState('init')
+
+  const save = () => {
+    updatePaymentPointer({ paymentPointer, setCurrentPaymentPointer })
+    init()
+  }
+
+  const cancel = () => {
+    setPaymentPointer(currentPaymentPointer)
+    init()
+  }
+
   const [state, setState] = React.useState('init')
 
   const inputRef = React.useRef()
@@ -48,10 +63,10 @@ export default () => {
       />
       <Controllers
         state={state}
+        save={save}
+        cancel={cancel}
         setState={setState}
         inputRef={inputRef}
-        paymentPointer={paymentPointer}
-        setPaymentPointer={setPaymentPointer}
       />
     </>
   )

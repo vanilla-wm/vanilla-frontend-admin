@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components'
 import Flex from '../../components/Flex'
 import Text from '../../components/Text'
-import Button from '../../components/Button'
 import Box from '../../components/Box'
 
 export const Wrapper = styled(Box)`
@@ -35,18 +34,12 @@ export const Item = styled(Flex)`
       left &&
       css`
         justify-content: flex-start;
-        ${Button} {
-          margin: 0;
-        }
       `}
   
     ${({ right }) =>
       right &&
       css`
         justify-content: flex-end;
-        ${Button} {
-          margin: 0;
-        }
       `}    
 
     ${({ desktop, theme: { media } }) =>

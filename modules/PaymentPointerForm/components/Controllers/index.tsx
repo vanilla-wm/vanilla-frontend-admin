@@ -5,33 +5,8 @@ import Box from '../../../../components/Box'
 import CheckIcon from '../../../../assets/CheckIcon'
 import CloseIcon from '../../../../assets/CloseIcon'
 import React from 'react'
-import UserContext from '../../../../config/UserContext'
-import updatePaymentPointer from '../../actions/updatePaymentPointer'
 
-export default ({
-  state,
-  setState,
-  paymentPointer,
-  setPaymentPointer,
-  inputRef,
-}) => {
-  const init = () => setState('init')
-  const {
-    paymentPointer: currentPaymentPointer,
-    setPaymentPointer: setCurrentPaymentPointer,
-  } = React.useContext(UserContext)
-
-  const save = () => {
-    //callApi
-    updatePaymentPointer({ paymentPointer, setCurrentPaymentPointer })
-    init()
-  }
-
-  const cancel = () => {
-    setPaymentPointer(currentPaymentPointer)
-    init()
-  }
-
+export default ({ state, setState, save, cancel, inputRef }) => {
   return (
     <>
       {state === 'init' && (

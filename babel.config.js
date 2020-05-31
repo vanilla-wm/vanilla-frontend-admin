@@ -1,8 +1,8 @@
 module.exports = function (api) {
-  api.cache(true);
+  api.cache(true)
 
   return {
-    presets: ["next/babel"],
+    presets: ['next/babel'],
     plugins: [
       [
         'styled-components',
@@ -14,6 +14,13 @@ module.exports = function (api) {
           preprocess: false,
         },
       ],
+      [
+        'prismjs',
+        {
+          languages: ['javascript', 'html'],
+          plugins: ['line-numbers', 'show-language'],
+        },
+      ],
     ],
-  };
-};
+  }
+}

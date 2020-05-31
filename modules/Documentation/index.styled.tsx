@@ -12,3 +12,18 @@ export const Snippet = styled(Box)`
   margin-top: 16px;
   margin-bottom: 24px;
 `
+
+export const Container = styled(Box)`
+  code {
+    border-radius: 8px;
+    padding: 2px 4px;
+    background-color: ${({
+      theme: {
+        color: { black },
+      },
+    }) => black[100]};
+  }
+  .code-toolbar .toolbar {
+    display: none;
+  }
+`

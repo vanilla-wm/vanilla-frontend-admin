@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 import Box from '../Box'
+import noProfile from '../../assets/no-profile.png'
 
 export default styled(Box)`
-  background: url("${({ picture }) => picture}") no-repeat center,#000000;
+  background: url("${({ picture }) => picture ? picture : noProfile}") no-repeat center,#000000;
   background-size: 32px 32px;
   height: 32px;
   width: 32px;

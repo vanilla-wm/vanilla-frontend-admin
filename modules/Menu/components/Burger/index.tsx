@@ -15,8 +15,8 @@ export default ({ asPath, name, picture }) => {
   const { isOpened, toggle } = useMenu(true)
 
   return (
-    <Item mobile>
-      <Button tertiary onClick={toggle}>
+    <Item right mobile>
+      <Button tertiary onClick={toggle} noMargin>
         {!isOpened ? <BurgerIcon /> : <CloseIcon />}
       </Button>
       {isOpened && (

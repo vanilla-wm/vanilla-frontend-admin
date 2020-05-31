@@ -17,15 +17,15 @@ export default ({ children }) => {
 
   React.useEffect(() => {
     if (!cookie) {
-      setAuthState('unAuthenticated')
+      setAuthState('authenticated')
     } else {
       loadUser({
-        onSuccess: setUser,
+        onSuccess: (user) => {
+          setUser(user)
+          setAuthState('authenticated')
+        },
         onFailure: logout,
       })
-
-      //request for verify
-      setTimeout(() => setAuthState('authenticated'), 2000)
     }
   }, [cookie])
 
