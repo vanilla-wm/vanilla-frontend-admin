@@ -8,18 +8,21 @@ import shape1 from '../../assets/shape-1.svg'
 import shape2 from '../../assets/shape-2.svg'
 import shape3 from '../../assets/shape-3.svg'
 import shape4 from '../../assets/shape-4.svg'
+import Button from '../../components/Button'
 
 export default () => (
   <Container>
     <Section>
       <Box>
-        <Logo />
+        <Button as="a" tertiary noMargin href="https://vanilla.so">
+          <Logo />
+        </Button>
         <Text xxl isMono padding="24px 0 16px 0">
           Vanilla Admin
         </Text>
         <Text color="white" maxWidth="400px">
-          Manage your account, analyse Web Monetization transactions,
-          or split the revenue with other content creators
+          Manage your account, analyse Web Monetization transactions, or split
+          the revenue with other content creators
         </Text>
         <SignInButton />
       </Box>
