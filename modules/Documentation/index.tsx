@@ -4,11 +4,15 @@ import Button from '../../components/Button'
 import Snippet from './components/Snippet'
 import { Container } from './index.styled'
 import UserContext from '../../config/UserContext'
+import getConfig from 'next/config'
 
 const Heading = (props) => <Text md mt="24px" {...props} />
 
 export default () => {
   const { clientId, clientSecret } = React.useContext(UserContext)
+  const {
+    publicRuntimeConfig: { ILP_SERVER_URL },
+  } = getConfig()
 
   return (
     <Container>
@@ -38,19 +42,18 @@ export default () => {
         After successful set up of the web monetized wallet. Get your payment
         pointer and create your meta tag.
       </Text>
-      <Text mt={24}>
+      <Text  color="orange" medium mt="12px">
         Add your payment pointer to{' '}
         <Text as="span" color="primary">
-          Vanilla Admin
-        </Text>
-        .
+          Vanilla Admin.
+        </Text>&nbsp;⚠️
       </Text>
       <Text mt={12}>
         Copy your Vanilla generated <code>{`<meta>`}</code> tag and add it to
         the <code>{`<head>`}</code> section of each page you want to monetize.
       </Text>
       <Snippet
-        code={`<meta name="monetization" content="https://ilp.vanilla.so/${clientId}" />`}
+        code={`<meta name="monetization" content="${ILP_SERVER_URL}/${clientId}" />`}
         language="html"
       />
       <Text mt={24} mb="4px">
@@ -71,7 +74,7 @@ export default () => {
       >
         Demo Application with Express server
       </Button>
-      .<Heading>API endpoints</Heading>
+      <Heading>API endpoints</Heading>
       <Text mt="8px">
         Endpoints provide interface for retrieving information about payments on
         your back-end server. Vanilla currently provides GraphQL API.
@@ -80,9 +83,9 @@ export default () => {
         Authentication
       </Text>
       <Text mt="4px">
-        For requests authentication use generated <code>clientId</code> and{' '}
-        <code>clientSecret</code>. In each request include header{' '}
-        <code>Authorization</code>
+        For requests authentication use generated <code>clientID</code> and{' '}
+        <code>clientSecret</code>. In each request include{' '}
+        <code>Authorization</code> header.
       </Text>
       <Snippet
         code={`
@@ -95,12 +98,12 @@ export default () => {
       </Text>
       <Snippet
         code={`
-        const realm = btoa(<clientId>:<clientSecret>) 
+        const realm = Base64(<clientID>:<clientSecret>) 
       `}
         language="js"
       />
       <Text>
-        Your<code>Authorization</code> header
+        Your <code>Authorization</code> header
       </Text>
       <Snippet
         code={`

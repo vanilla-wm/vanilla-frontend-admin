@@ -1,5 +1,5 @@
 import React from 'react'
-import BaseLayout from '../../layouts/BaseLayout'
+import BaseLayout from '../../components/layouts/BaseLayout'
 import ComingSoon from '../../modules/ComingSoon'
 
 const Analytics = () => {

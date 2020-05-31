@@ -12,7 +12,7 @@ export default ({ code, plugins, language }: Props) => {
   const ref = React.useRef()
   React.useEffect(() => {
     highlight()
-  })
+  }, [])
 
   const highlight = () => {
     if (ref.current) {

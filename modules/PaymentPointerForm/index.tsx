@@ -37,7 +37,7 @@ export default () => {
         Payment pointer
       </Text>
       <Text mt="8px" mb={1} color="white">
-        Payment Pointers are a standardized identifier for payment accounts. In
+        Payment Pointers are a standardized identifiers for payment accounts. In
         the same way that an email address provides.
       </Text>
       <Button

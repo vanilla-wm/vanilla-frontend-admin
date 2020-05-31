@@ -1,6 +1,6 @@
 import React from 'react'
-import BaseLayout from '../../layouts/BaseLayout'
-import SplitLayout from '../../layouts/SplitLayout'
+import BaseLayout from '../../components/layouts/BaseLayout'
+import SplitLayout from '../../components/layouts/SplitLayout'
 import Box from '../../components/Box'
 import Content from '../../modules/Content'
 

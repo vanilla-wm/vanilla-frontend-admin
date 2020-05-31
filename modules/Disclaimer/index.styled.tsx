@@ -27,7 +27,7 @@ export const Container = styled(Flex)`
 export const Description = styled(Text).attrs({
   inline: true,
   medium: true,
-  color: 'primary',
+  color: 'white',
 })`
   margin: 0 16px;
   white-space: nowrap;
