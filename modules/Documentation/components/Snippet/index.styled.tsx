@@ -6,7 +6,7 @@ export const Container = styled(Box)`
   background-color: ${({ theme: { color } }) => color.black[100]};
   border-radius: 7px;
   overflow-y: scroll;
-  white-space: pre-wrap;
+  white-space: nowrap;
   color: ${({ theme: { color } }) => color.orange.base};
   .token {
     line-height: 160%;
@@ -20,7 +20,7 @@ export const Container = styled(Box)`
   .token.attr-value {
     color: ${({ theme: { color } }) => color.green.base};
   }
-  .token.attr-name {
+  .token.attr-name,.token.function {
     color: ${({ theme: { color } }) => color.primary.base};
   }
   .toolbar {

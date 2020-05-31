@@ -50,7 +50,7 @@ export default () => {
         the <code>{`<head>`}</code> section of each page you want to monetize.
       </Text>
       <Snippet
-        code={`<meta name="monetization" content="$wallet.example.com/alice" />`}
+        code={`<meta name="monetization" content="https://ilp.vanilla.so/${clientId}" />`}
         language="html"
       />
       <Text mt={24} mb="4px">
@@ -86,8 +86,25 @@ export default () => {
       </Text>
       <Snippet
         code={`
-        Authorization: ${clientId}:${clientSecret}
+        Authorization: Basic <realm>
       `}
+        language="js"
+      />
+      <Text>
+        Create <code>realm</code>
+      </Text>
+      <Snippet
+        code={`
+        const realm = btoa(<clientId>:<clientSecret>) 
+      `}
+        language="js"
+      />
+      <Text>
+        Your<code>Authorization</code> header
+      </Text>
+      <Snippet
+        code={`
+Authorization: Basic ${btoa(`${clientId}:${clientSecret}`)}`}
         language="js"
       />
       <Text color="orange" mt="12px" medium>

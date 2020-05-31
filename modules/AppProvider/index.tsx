@@ -17,7 +17,7 @@ export default ({ children }) => {
 
   React.useEffect(() => {
     if (!cookie) {
-      setAuthState('authenticated')
+      setAuthState('unAuthenticated')
     } else {
       loadUser({
         onSuccess: (user) => {

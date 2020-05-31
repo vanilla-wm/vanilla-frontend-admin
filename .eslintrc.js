@@ -2,7 +2,6 @@ module.exports = {
     root: true,
     env: {
         browser: true,
-        'jest/globals': true,
         node: true,
         es6: true,
     },
@@ -11,9 +10,6 @@ module.exports = {
         'react',
         '@typescript-eslint',
         'prettier',
-        'markdown',
-        'jest',
-        'jest-formatting',
     ],
     parserOptions: {
         ecmaFeatures: {
