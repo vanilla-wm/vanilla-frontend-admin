@@ -17,7 +17,7 @@ export default () => (
         <Button as="a" tertiary noMargin href="https://vanilla.so">
           <Logo />
         </Button>
-        <Text xxl isMono padding="24px 0 16px 0">
+        <Text xxl isMono as="h1" padding="24px 0 16px 0">
           Vanilla Admin
         </Text>
         <Text color="white" maxWidth="400px">
