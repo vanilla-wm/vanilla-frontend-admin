@@ -38,7 +38,7 @@ const productionConfig = {
   AUTH_SERVER_URL: 'https://api.vanilla.so/auth/google',
   GRAPHQL_SERVER_URI: 'api.vanilla.so/graphql',
   DOMAIN: '.vanilla.so',
-  ILP_SERVER_URL: 'https://ilp.vanilla.so/pay',
+  ILP_SERVER_URL: '$api.vanilla.so/pay',
   BASE_PATH: 'https://admin.vanilla.so',
 }
 

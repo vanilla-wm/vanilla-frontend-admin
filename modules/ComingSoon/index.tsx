@@ -13,7 +13,7 @@ export default () => (
         </Text>
       </Box>
       <Text color="white" lg mt="16px">
-        Unfortunately, this feature is not ready for you yet.
+        Unfortunately, this feature is not ready.
       </Text>
     </Container>
     <Footer as="footer">
