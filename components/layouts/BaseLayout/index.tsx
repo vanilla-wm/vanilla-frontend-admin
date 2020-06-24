@@ -7,9 +7,7 @@ import AuthContext from '../../../config/AuthContext'
 import Disclaimer from '../../../modules/Disclaimer'
 
 export default ({ children }) => {
-  let { authState } = React.useContext(AuthContext)
-
-  authState = 'authenticated'; //for me, so I can check it
+  const { authState } = React.useContext(AuthContext)
 
   return (
     <Container>
