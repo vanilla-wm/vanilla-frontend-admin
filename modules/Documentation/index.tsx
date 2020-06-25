@@ -47,20 +47,20 @@ export default () => {
       </InfoBox>
 
       <Heading>How it works</Heading>
-        <HowItWorks 
-          ILP_SERVER_URL={ILP_SERVER_URL} 
-          clientId={clientId} 
-        />
-      
+      <HowItWorks
+        ILP_SERVER_URL={ILP_SERVER_URL}
+        clientId={clientId}
+      />
+
       <Heading>API Endpoints</Heading>
-        <ApiEndpoints 
-          GRAPHQL_SERVER_URI={GRAPHQL_SERVER_URI} 
-          clientId={clientId} 
-          clientSecret={clientSecret}
-        />
+      <ApiEndpoints
+        GRAPHQL_SERVER_URI={GRAPHQL_SERVER_URI}
+        clientId={clientId}
+        clientSecret={clientSecret}
+      />
 
       <Heading>Coming Soon</Heading>
-        <ComingSoon />
+      <ComingSoon />
     </Container>
-  )
+  );
 }
