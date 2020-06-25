@@ -8,6 +8,7 @@ import Disclaimer from '../../../modules/Disclaimer'
 
 export default ({ children }) => {
   const { authState } = React.useContext(AuthContext)
+
   return (
     <Container>
       {authState === 'authenticated' && (

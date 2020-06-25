@@ -10,14 +10,21 @@ type Props = {
 
 export default ({ code, plugins, language }: Props) => {
   const ref = React.useRef()
+  const [isMounted, setIsMounted] = React.useState(false)
+
   React.useEffect(() => {
+    setIsMounted(true)
     highlight()
-  }, [])
+  }, [isMounted])
 
   const highlight = () => {
     if (ref.current) {
       Prism.highlightElement(ref.current)
     }
+  }
+
+  if (!isMounted) {
+    return null
   }
 
   return (
