@@ -4,7 +4,13 @@ import Button from '../../../../components/Button';
 import { Code } from '../../index.styled';
 import Snippet from '../Snippet';
 
-export default ({ GRAPHQL_SERVER_URI, clientId, clientSecret }) => (
+type Props = {
+  GRAPHQL_SERVER_URI: string
+  clientId: string
+  clientSecret: string
+}
+
+export default ({ GRAPHQL_SERVER_URI, clientId, clientSecret }: Props) => (
   <>
     <Text mt="8px">
       Endpoints provide interface for retrieving information about payments on

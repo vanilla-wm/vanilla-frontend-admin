@@ -4,7 +4,12 @@ import Button from '../../../../components/Button';
 import { Code } from '../../index.styled';
 import Snippet from '../Snippet';
 
-export default ({ ILP_SERVER_URL, clientId }) => (
+type Props = {
+  ILP_SERVER_URL: string
+  clientId: string
+}
+
+export default ({ ILP_SERVER_URL, clientId }: Props) => (
   <>
     <ol>
       <Text mt="16px" as="li">
