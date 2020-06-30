@@ -5,6 +5,7 @@ import GlobalStyle from '../config/GlobalStyle'
 import theme from '../theme'
 import AppProvider from '../modules/AppProvider'
 import Head from 'next/head'
+import { IntlProvider } from 'react-intl'
 
 const App = ({
   Component,
@@ -24,11 +25,13 @@ const App = ({
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle theme={theme} />
-        <AppProvider>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </AppProvider>
+        <IntlProvider locale='en'>
+          <AppProvider>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </AppProvider>
+        </IntlProvider>
       </ThemeProvider>
     </>
   )

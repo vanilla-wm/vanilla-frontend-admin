@@ -8,6 +8,8 @@ import InfoBox from './components/InfoBox'
 import HowItWorks from './components/HowItWorks';
 import ApiEndpoints from './components/ApiEndpoints';
 import ComingSoon from './components/ComingSoon';
+import { FormattedMessage } from 'react-intl'
+import messages from './index.messages'
 
 const Heading = (props) => <Text as="h3" md mt="24px" {...props} />
 
@@ -20,17 +22,19 @@ export default () => {
   return (
     <Container>
       <Text mt={24}>
-        Vanilla provides{' '}
+        <FormattedMessage {...messages.whatProvides.first} />
+        {' '}
         <Text as="span" color="primary">
-          Web Monetization
-        </Text>{' '}
-        verification features for applications that require higher level of
-        flexibility.
+          <FormattedMessage {...messages.whatProvides.second} />
+        </Text>
+        {' '}
+        <FormattedMessage {...messages.whatProvides.third} />
       </Text>
       <InfoBox mt="16px">
         <Text mr="14px">💡</Text>
         <Text>
-          Vanilla is currently working on implementing{' '}
+          <FormattedMessage {...messages.currentlyWorking.first} />
+          {' '}
           <Button
             medium
             target="_blank"
@@ -39,27 +43,32 @@ export default () => {
             as="a"
             href="https://interledger.org/rfcs/0039-stream-receipts/"
           >
-            STREAM Receipts
+            <FormattedMessage {...messages.currentlyWorking.second} />
           </Button>
-          . STREAM Receipt is a proof of payment provided by Web Monetization
-          Wallet.
+          <FormattedMessage {...messages.currentlyWorking.third} />
         </Text>
       </InfoBox>
 
-      <Heading>How it works</Heading>
+      <Heading>
+        <FormattedMessage {...messages.howItWorksTitle} />
+      </Heading>
       <HowItWorks
         ILP_SERVER_URL={ILP_SERVER_URL}
         clientId={clientId}
       />
 
-      <Heading>API Endpoints</Heading>
+      <Heading>
+        <FormattedMessage {...messages.apiEndpoints} />
+      </Heading>
       <ApiEndpoints
         GRAPHQL_SERVER_URI={GRAPHQL_SERVER_URI}
         clientId={clientId}
         clientSecret={clientSecret}
       />
 
-      <Heading>Coming Soon</Heading>
+      <Heading>
+        <FormattedMessage {...messages.comingSoon} />
+      </Heading>
       <ComingSoon />
     </Container>
   );

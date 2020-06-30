@@ -3,12 +3,14 @@ import Text from '../../../../components/Text';
 import Button from '../../../../components/Button';
 import { Code } from '../../index.styled';
 import Snippet from '../Snippet';
+import { FormattedMessage } from 'react-intl'
+import messages from './index.messages'
 
 export default ({ GRAPHQL_SERVER_URI, clientId, clientSecret }) => (
   <>
     <Text mt="8px">
-      Endpoints provide interface for retrieving information about payments on
-          your back-end server. Vanilla currently provides{' '}
+      <FormattedMessage {...messages.intro} />
+      {' '}
       <Button
         secondary
         medium
@@ -16,14 +18,17 @@ export default ({ GRAPHQL_SERVER_URI, clientId, clientSecret }) => (
         href={`https://${GRAPHQL_SERVER_URI}`}
         target="_blank"
       >
-        GraphQL API.
-      </Button>
+        GraphQL API
+      </Button>.
     </Text>
     <Text mt="24px" semibold>
-      Authentication
-        </Text>
+      <FormattedMessage {...messages.authenticationTitle} />
+    </Text>
     <Text mt="4px">
-      For requests authentication use generated <Code>clientID</Code> and{' '}
+      <FormattedMessage {...messages.whatToUse.first} />
+      <Code>clientID</Code>
+      <FormattedMessage {...messages.whatToUse.second} />
+      {' '}
       <Code>clientSecret</Code>.
     </Text>
     <Snippet
@@ -33,8 +38,9 @@ export default ({ GRAPHQL_SERVER_URI, clientId, clientSecret }) => (
       language="js"
     />
     <Text mt="20px">
-      In each request include <Code>Authorization</Code> header provided
-          below.
+      <FormattedMessage {...messages.whatInclude.first} />
+      <Code>Authorization</Code>
+      <FormattedMessage {...messages.whatInclude.second} />
     </Text>
     <Snippet
       code={`
@@ -42,10 +48,11 @@ export default ({ GRAPHQL_SERVER_URI, clientId, clientSecret }) => (
       language="js"
     />
     <Text mt="24px" semibold>
-      Endpoint Proof
-        </Text>
+      <FormattedMessage {...messages.endpointProof} />
+    </Text>
     <Text mt="4px" medium>
-      Returns proof of payments for visitor's <Code>requestId</Code>
+      <FormattedMessage {...messages.returnsProof} />
+      <Code>requestId</Code>.
     </Text>
     <Text mt="20px" sm>
       GraphQL Query
@@ -62,7 +69,7 @@ export default ({ GRAPHQL_SERVER_URI, clientId, clientSecret }) => (
       language="js"
     />
     <Text mt="20px" sm>
-      Example Response
+      <FormattedMessage {...messages.exampleResponse} />
     </Text>
     <Snippet
       code={`{
