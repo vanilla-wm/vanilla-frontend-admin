@@ -1,7 +1,6 @@
 import React from 'react';
 import Text from '../../../../components/Text';
 import Button from '../../../../components/Button';
-import { Code } from '../../index.styled';
 import Snippet from '../Snippet';
 import messages from './index.messages'
 import { FormattedMessage } from 'react-intl';
@@ -11,7 +10,6 @@ export default ({ ILP_SERVER_URL, clientId }) => (
     <ol>
       <Text mt="16px" as="li">
         <FormattedMessage {...messages.stepOne} />
-        {' '}
         <Button
           href="https://webmonetization.org/docs/getting-started"
           as="a"
@@ -22,17 +20,13 @@ export default ({ ILP_SERVER_URL, clientId }) => (
         >
           webmonetization.org
         </Button>
-          .
+        .
       </Text>
       <Text mt="16px" as="li">
         <FormattedMessage {...messages.stepTwo} />
-      </Text>{' '}
+      </Text>
       <Text mt="16px" as="li">
-        <FormattedMessage {...messages.stepThree.firstPart} />
-        <Code>{`<meta>`}</Code>
-        <FormattedMessage {...messages.stepThree.secondPart} />
-        <Code>{`<head>`}</Code>
-        <FormattedMessage {...messages.stepThree.thirdPart} />
+        <FormattedMessage {...messages.stepThree} />
         <Snippet
           code={`<meta name="monetization" content="${ILP_SERVER_URL}/${clientId}" />`}
           language="html"

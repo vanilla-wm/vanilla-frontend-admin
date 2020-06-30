@@ -1,39 +1,30 @@
 import { defineMessages } from 'react-intl';
+import Text from '../../components/Text'
+import Button from '../../components/Button'
 
 export default defineMessages({
   whatProvides: {
-    first: {
-      id: 'WhatProvides.first',
-      defaultMessage: 'Vanilla provides',
-      description: 'The fisrt part of what Vanilla provides'
-    },
-    second: {
-      id: 'WhatProvides.second',
-      defaultMessage: 'Web Monetization',
-      description: 'The second part of what Vanilla provides'
-    },
-    third: {
-      id: 'WhatProvides..third',
-      defaultMessage: 'verification features for applications that require higher level of flexibility.',
-      description: 'The third part of what Vanilla provides'
-    },
+    id: 'WhatProvides',
+    defaultMessage: 'Vanilla provides <text>Web Monetization</text> verification features for applications that require higher level of flexibility.',
+    description: 'What Vanilla provides',
+    values: {
+      text: (value) => <Text as="span" color="primary">{value}</Text>
+    }
   },
   currentlyWorking: {
-    first: {
-      id: 'CurrentlyWorking.first',
-      defaultMessage: 'Vanilla is currently working on implementing',
-      description: 'The fisrt part of what Vanilla is currently working on'
-    },
-    second: {
-      id: 'CurrentlyWorking.second',
-      defaultMessage: 'STREAM Receipts',
-      description: 'The fisrt part of what Vanilla is currently working on'
-    },
-    third: {
-      id: 'CurrentlyWorking.third',
-      defaultMessage: '. STREAM Receipt is a proof of payment provided by Web Monetization Wallet.',
-      description: 'The fisrt part of what Vanilla is currently working on'
-    },
+    id: 'CurrentlyWorking',
+    defaultMessage: 'Vanilla is currently working on implementing <button>STREAM Receipts</button>. STREAM Receipt is a proof of payment provided by Web Monetization Wallet.',
+    description: 'What Vanilla is currently working on',
+    values: {
+      button: (value) => <Button
+        medium
+        target="_blank"
+        color="primary"
+        secondary
+        as="a"
+        href="https://interledger.org/rfcs/0039-stream-receipts/"
+      >{value}</Button>
+    }
   },
   howItWorksTitle: {
     id: 'HowItWorks.title',

@@ -1,7 +1,6 @@
 import React from 'react';
 import Text from '../../../../components/Text';
 import Button from '../../../../components/Button';
-import { Code } from '../../index.styled';
 import Snippet from '../Snippet';
 import { FormattedMessage } from 'react-intl'
 import messages from './index.messages'
@@ -10,7 +9,6 @@ export default ({ GRAPHQL_SERVER_URI, clientId, clientSecret }) => (
   <>
     <Text mt="8px">
       <FormattedMessage {...messages.intro} />
-      {' '}
       <Button
         secondary
         medium
@@ -19,17 +17,14 @@ export default ({ GRAPHQL_SERVER_URI, clientId, clientSecret }) => (
         target="_blank"
       >
         GraphQL API
-      </Button>.
+      </Button>
+      .
     </Text>
     <Text mt="24px" semibold>
       <FormattedMessage {...messages.authenticationTitle} />
     </Text>
     <Text mt="4px">
-      <FormattedMessage {...messages.whatToUse.first} />
-      <Code>clientID</Code>
-      <FormattedMessage {...messages.whatToUse.second} />
-      {' '}
-      <Code>clientSecret</Code>.
+      <FormattedMessage {...messages.whatToUse} />
     </Text>
     <Snippet
       code={`
@@ -38,9 +33,7 @@ export default ({ GRAPHQL_SERVER_URI, clientId, clientSecret }) => (
       language="js"
     />
     <Text mt="20px">
-      <FormattedMessage {...messages.whatInclude.first} />
-      <Code>Authorization</Code>
-      <FormattedMessage {...messages.whatInclude.second} />
+      <FormattedMessage {...messages.whatInclude} />
     </Text>
     <Snippet
       code={`
@@ -52,10 +45,9 @@ export default ({ GRAPHQL_SERVER_URI, clientId, clientSecret }) => (
     </Text>
     <Text mt="4px" medium>
       <FormattedMessage {...messages.returnsProof} />
-      <Code>requestId</Code>.
     </Text>
     <Text mt="20px" sm>
-      GraphQL Query
+      <FormattedMessage {...messages.graphQLQuery} />
     </Text>
     <Snippet
       code={`

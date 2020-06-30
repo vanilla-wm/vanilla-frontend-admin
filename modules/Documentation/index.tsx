@@ -1,6 +1,5 @@
 import React from 'react'
 import Text from '../../components/Text'
-import Button from '../../components/Button'
 import { Container } from './index.styled'
 import UserContext from '../../config/UserContext'
 import getConfig from 'next/config'
@@ -22,30 +21,12 @@ export default () => {
   return (
     <Container>
       <Text mt={24}>
-        <FormattedMessage {...messages.whatProvides.first} />
-        {' '}
-        <Text as="span" color="primary">
-          <FormattedMessage {...messages.whatProvides.second} />
-        </Text>
-        {' '}
-        <FormattedMessage {...messages.whatProvides.third} />
+        <FormattedMessage {...messages.whatProvides} />
       </Text>
       <InfoBox mt="16px">
         <Text mr="14px">💡</Text>
         <Text>
-          <FormattedMessage {...messages.currentlyWorking.first} />
-          {' '}
-          <Button
-            medium
-            target="_blank"
-            color="primary"
-            secondary
-            as="a"
-            href="https://interledger.org/rfcs/0039-stream-receipts/"
-          >
-            <FormattedMessage {...messages.currentlyWorking.second} />
-          </Button>
-          <FormattedMessage {...messages.currentlyWorking.third} />
+          <FormattedMessage {...messages.currentlyWorking} />
         </Text>
       </InfoBox>
 

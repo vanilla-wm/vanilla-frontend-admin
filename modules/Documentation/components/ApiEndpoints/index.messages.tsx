@@ -1,9 +1,10 @@
 import { defineMessages } from 'react-intl';
+import { Code } from '../../index.styled';
 
 export default defineMessages({
   intro: {
     id: 'ApiEndpoints.intro',
-    defaultMessage: 'Endpoints provide interface for retrieving information about payments on your back-end server. Vanilla currently provides',
+    defaultMessage: 'Endpoints provide interface for retrieving information about payments on your back-end server. Vanilla currently provides ',
     description: 'Introduction in ApiEndpoints, about providing GraphQL API.'
   },
   authenticationTitle: {
@@ -12,27 +13,19 @@ export default defineMessages({
     description: 'The authentication title in ApiEndpoints section'
   },
   whatToUse: {
-    first: {
-      id: 'Authentication.whatToUse.first',
-      defaultMessage: 'For requests authentication use generated ',
-      description: 'First part of what to use for requests authentication'
-    },
-    second: {
-      id: 'Authentication.whatToUse.second',
-      defaultMessage: ' and',
-      description: 'Connecting of what to use'
+    id: 'Authentication.whatToUse.first',
+    defaultMessage: 'For requests authentication use generated <code>clientID</code> and <code>clientSecret</code>.',
+    description: 'What to use for requests authentication',
+    values: {
+      code: (value) => <Code>{value}</Code>
     }
   },
   whatInclude: {
-    first: {
-      id: 'Authentication.whatInclude.first',
-      defaultMessage: 'In each request include ',
-      description: 'First part of what include for requests authentication'
-    },
-    second: {
-      id: 'Authentication.whatInclude.second',
-      defaultMessage: ' header provided below.',
-      description: 'Second part of what to include'
+    id: 'Authentication.whatInclude',
+    defaultMessage: 'In each request include <code>Authorization</code> header provided below.',
+    description: 'What include for requests authentication',
+    values: {
+      code: (value) => <Code>{value}</Code>
     }
   },
   endpointProof: {
@@ -42,8 +35,16 @@ export default defineMessages({
   },
   returnsProof: {
     id: 'EndpointProof.return',
-    defaultMessage: "Returns proof of payments for visitor's ",
-    description: 'Explain what Endpoint Proof does'
+    defaultMessage: "Returns proof of payments for visitor's <code>requestId</code>.",
+    description: 'Explain what Endpoint Proof does',
+    values: {
+      code: (value) => <Code>{value}</Code>
+    }
+  },
+  graphQLQuery: {
+    id: 'GraphQLQuery',
+    defaultMessage: 'GraphQL Query',
+    description: 'GraphQL Query'
   },
   exampleResponse: {
     id: 'Response.example',
