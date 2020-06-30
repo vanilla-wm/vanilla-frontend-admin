@@ -13,7 +13,7 @@ export default defineMessages({
     description: 'The authentication title in ApiEndpoints section'
   },
   whatToUse: {
-    id: 'Authentication.whatToUse.first',
+    id: 'Authentication.whatToUse',
     defaultMessage: 'For requests authentication use generated <code>clientID</code> and <code>clientSecret</code>.',
     description: 'What to use for requests authentication',
     values: {

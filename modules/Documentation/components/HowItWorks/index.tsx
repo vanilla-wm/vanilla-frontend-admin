@@ -1,9 +1,9 @@
-import React from 'react';
-import Text from '../../../../components/Text';
-import Button from '../../../../components/Button';
-import Snippet from '../Snippet';
+import React from 'react'
+import Text from '../../../../components/Text'
+import Button from '../../../../components/Button'
+import Snippet from '../Snippet'
 import messages from './index.messages'
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl'
 
 export default ({ ILP_SERVER_URL, clientId }) => (
   <>
@@ -47,4 +47,4 @@ export default ({ ILP_SERVER_URL, clientId }) => (
       <FormattedMessage {...messages.demoLink} />
     </Button>
   </>
-);
+)

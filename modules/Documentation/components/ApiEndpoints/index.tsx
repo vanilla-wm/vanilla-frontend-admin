@@ -1,7 +1,7 @@
-import React from 'react';
-import Text from '../../../../components/Text';
-import Button from '../../../../components/Button';
-import Snippet from '../Snippet';
+import React from 'react'
+import Text from '../../../../components/Text'
+import Button from '../../../../components/Button'
+import Snippet from '../Snippet'
 import { FormattedMessage } from 'react-intl'
 import messages from './index.messages'
 
@@ -37,7 +37,9 @@ export default ({ GRAPHQL_SERVER_URI, clientId, clientSecret }) => (
     </Text>
     <Snippet
       code={`
-  Authorization: Basic ${Buffer.from(`${clientId}:${clientSecret}`).toString('base64')}`}
+  Authorization: Basic ${Buffer.from(`${clientId}:${clientSecret}`).toString(
+    'base64'
+  )}`}
       language="js"
     />
     <Text mt="24px" semibold>
@@ -79,4 +81,4 @@ export default ({ GRAPHQL_SERVER_URI, clientId, clientSecret }) => (
       language="js"
     />
   </>
-);
+)
