@@ -5,9 +5,13 @@ import Controllers from './components/Controllers'
 import UserContext from '../../config/UserContext'
 import updatePaymentPointer from './actions/updatePaymentPointer'
 import messages from './index.messages'
-import { FormattedMessage, injectIntl } from 'react-intl'
+import { FormattedMessage, injectIntl, IntlShape } from 'react-intl'
 
-const Setup = ({ intl }) => {
+type Props = {
+  intl: IntlShape
+}
+
+const Setup = ({ intl }: Props) => {
   const {
     paymentPointer: currentPaymentPointer,
     setPaymentPointer: setCurrentPaymentPointer,
