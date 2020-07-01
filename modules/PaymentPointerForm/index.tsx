@@ -1,12 +1,13 @@
 import Text from '../../components/Text'
 import Input from '../../components/forms/Input'
 import React from 'react'
-import Button from '../../components/Button'
 import Controllers from './components/Controllers'
 import UserContext from '../../config/UserContext'
 import updatePaymentPointer from './actions/updatePaymentPointer'
+import messages from './index.messages'
+import { FormattedMessage, injectIntl } from 'react-intl'
 
-export default () => {
+const Setup = ({ intl }) => {
   const {
     paymentPointer: currentPaymentPointer,
     setPaymentPointer: setCurrentPaymentPointer,
@@ -34,21 +35,10 @@ export default () => {
   return (
     <>
       <Text md mt={32} as="h3">
-        Payment Pointer
+        <FormattedMessage {...messages.paymentPointerTitle} />
       </Text>
-      <Text mt="8px" mb={1} >
-        A payment pointer is a Web Monetization Wallet address, that we use to
-        deliver payments to you. Learn more about{' '}
-        <Button
-          medium
-          secondary
-          as="a"
-          href="https://webmonetization.org/#wallets"
-          target="_blank"
-        >
-          Web Monetization Wallets
-        </Button>
-        .
+      <Text mt="8px" mb={1}>
+        <FormattedMessage {...messages.paymentPointerText} />
       </Text>
       <Input
         ref={inputRef}
@@ -58,8 +48,8 @@ export default () => {
         value={paymentPointer}
         onChange={setPaymentPointer}
         isDisabled={state === 'init'}
-        label="Your Payment pointer"
-        placeholder="Add payment pointer"
+        label={<FormattedMessage {...messages.label} />}
+        placeholder={intl.formatMessage({ ...messages.placeholder })}
       />
       <Controllers
         state={state}
@@ -71,3 +61,5 @@ export default () => {
     </>
   )
 }
+
+export default injectIntl(Setup)

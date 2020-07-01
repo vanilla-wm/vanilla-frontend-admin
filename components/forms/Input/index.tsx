@@ -2,6 +2,8 @@ import { Container, InputComponent, InputContainer, Copy } from './index.styled'
 import Text from '../../Text'
 import React from 'react'
 import CopyIcon from '../../../assets/CopyIcon'
+import messages from './index.messages'
+import { FormattedMessage } from 'react-intl'
 
 export default React.forwardRef(
   (
@@ -53,7 +55,7 @@ export default React.forwardRef(
         </InputContainer>
         {hasCopy && (
           <Text isHidden={!isCopied} xs color="primary" mt="4px">
-            Copied!
+            <FormattedMessage {...messages.copied} />
           </Text>
         )}
       </Container>
