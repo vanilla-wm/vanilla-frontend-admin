@@ -1,6 +1,6 @@
+import React from 'react'
 import { defineMessages } from 'react-intl'
 import { Code } from '../../index.styled'
-import React from 'react'
 
 export default defineMessages({
   intro: {

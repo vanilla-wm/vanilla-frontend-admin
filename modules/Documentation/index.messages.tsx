@@ -1,7 +1,7 @@
+import React from 'react'
 import { defineMessages } from 'react-intl'
 import Text from '../../components/Text'
 import Button from '../../components/Button'
-import React from 'react'
 
 export default defineMessages({
   whatProvides: {

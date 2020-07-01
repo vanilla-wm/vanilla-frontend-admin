@@ -5,6 +5,8 @@ import Box from '../../../../components/Box'
 import CheckIcon from '../../../../assets/CheckIcon'
 import CloseIcon from '../../../../assets/CloseIcon'
 import React from 'react'
+import { FormattedMessage } from 'react-intl'
+import messages from './index.messages'
 
 export default ({ state, setState, save, cancel, inputRef }) => {
   return (
@@ -18,18 +20,18 @@ export default ({ state, setState, save, cancel, inputRef }) => {
             setTimeout(() => inputRef.current.focus(), 10)
           }}
         >
-          Edit
+          <FormattedMessage {...messages.editButton} />
         </Controller>
       )}
       {state === 'edit' && (
         <Flex>
           <Box mr="32px">
             <Controller icon={<CheckIcon />} onClick={save}>
-              Save
+              <FormattedMessage {...messages.saveButton} />
             </Controller>
           </Box>
           <Controller orange icon={<CloseIcon />} onClick={cancel}>
-            Cancel
+            <FormattedMessage {...messages.cancelButton} />
           </Controller>
         </Flex>
       )}
