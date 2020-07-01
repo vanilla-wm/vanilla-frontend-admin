@@ -5,7 +5,13 @@ import Snippet from '../Snippet'
 import { FormattedMessage } from 'react-intl'
 import messages from './index.messages'
 
-export default ({ GRAPHQL_SERVER_URI, clientId, clientSecret }) => (
+type Props = {
+  GRAPHQL_SERVER_URI: string
+  clientId: string
+  clientSecret: string
+}
+
+export default ({ GRAPHQL_SERVER_URI, clientId, clientSecret }: Props) => (
   <>
     <Text mt="8px">
       <FormattedMessage {...messages.intro} />
