@@ -1,12 +1,15 @@
 import styled from 'styled-components'
 import getConfig from 'next/config'
-import GoogleIcon from '../../assets/GoogleIcon'
 import React from 'react'
+import { FormattedMessage } from 'react-intl'
+import GoogleIcon from '../../assets/GoogleIcon'
 import { BaseButton } from '../Button'
 import Box from '../Box'
 
 import Flex from '../Flex'
 import { getCookie } from '../../utils/cookie'
+
+import messages from './index.messages'
 
 const Button = styled(BaseButton)`
   display: flex;
@@ -66,7 +69,9 @@ export default () => {
         <IconWrapper>
           <GoogleIcon />
         </IconWrapper>
-        <Box ml="14px">Sign in with Google</Box>
+        <Box ml="14px">
+          <FormattedMessage {...messages.signInButton} />
+        </Box>
       </Button>
     </Flex>
   )

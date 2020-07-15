@@ -1,4 +1,5 @@
 import React from 'react'
+import { FormattedMessage } from 'react-intl'
 import Text from '../../components/Text'
 import { Container, Section, Shape } from './index.styled'
 import Box from '../../components/Box'
@@ -9,6 +10,7 @@ import shape2 from '../../assets/shape-2.svg'
 import shape3 from '../../assets/shape-3.svg'
 import shape4 from '../../assets/shape-4.svg'
 import Button from '../../components/Button'
+import messages from './index.messages'
 
 export default () => (
   <Container>
@@ -21,8 +23,7 @@ export default () => (
           Vanilla Admin
         </Text>
         <Text color="white" maxWidth="400px">
-          Manage your account, analyse Web Monetization transactions, or split
-          the revenue with other content creators
+          <FormattedMessage {...messages.signInText} />
         </Text>
         <SignInButton />
       </Box>

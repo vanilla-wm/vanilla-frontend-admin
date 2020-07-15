@@ -1,11 +1,11 @@
 import React from 'react'
 import { AppProps } from 'next/app'
 import { ThemeProvider } from 'styled-components'
+import Head from 'next/head'
+import { IntlProvider } from 'react-intl'
 import GlobalStyle from '../config/GlobalStyle'
 import theme from '../theme'
 import AppProvider from '../modules/AppProvider'
-import Head from 'next/head'
-import { IntlProvider } from 'react-intl'
 
 const App = ({
   Component,
@@ -25,7 +25,7 @@ const App = ({
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle theme={theme} />
-        <IntlProvider locale='en'>
+        <IntlProvider locale="en">
           <AppProvider>
             <Layout>
               <Component {...pageProps} />

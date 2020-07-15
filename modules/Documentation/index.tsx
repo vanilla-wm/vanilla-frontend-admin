@@ -1,13 +1,13 @@
 import React from 'react'
+import getConfig from 'next/config'
+import { FormattedMessage } from 'react-intl'
 import Text from '../../components/Text'
 import { Container } from './index.styled'
 import UserContext from '../../config/UserContext'
-import getConfig from 'next/config'
 import InfoBox from './components/InfoBox'
-import HowItWorks from './components/HowItWorks';
-import ApiEndpoints from './components/ApiEndpoints';
-import ComingSoon from './components/ComingSoon';
-import { FormattedMessage } from 'react-intl'
+import HowItWorks from './components/HowItWorks'
+import ApiEndpoints from './components/ApiEndpoints'
+import ComingSoon from './components/ComingSoon'
 import messages from './index.messages'
 
 const Heading = (props) => <Text as="h3" md mt="24px" {...props} />
@@ -33,10 +33,7 @@ export default () => {
       <Heading>
         <FormattedMessage {...messages.howItWorksTitle} />
       </Heading>
-      <HowItWorks
-        ILP_SERVER_URL={ILP_SERVER_URL}
-        clientId={clientId}
-      />
+      <HowItWorks ILP_SERVER_URL={ILP_SERVER_URL} clientId={clientId} />
 
       <Heading>
         <FormattedMessage {...messages.apiEndpoints} />
@@ -52,5 +49,5 @@ export default () => {
       </Heading>
       <ComingSoon />
     </Container>
-  );
+  )
 }
