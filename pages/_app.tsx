@@ -25,7 +25,7 @@ const App = ({
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle theme={theme} />
-        <IntlProvider locale="en">
+        <IntlProvider locale='en'>
           <AppProvider>
             <Layout>
               <Component {...pageProps} />
