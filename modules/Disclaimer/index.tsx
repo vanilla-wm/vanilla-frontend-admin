@@ -1,11 +1,13 @@
 import React from 'react'
+import { FormattedMessage } from 'react-intl'
 import { Container, Description } from './index.styled'
 import Button from '../../components/Button'
+import messages from './index.messages'
 
 export default () => (
   <Container>
     <Description>
-      This is an experimental project made by{' '}
+      <FormattedMessage {...messages.experimentalProjectMessage} />
       <Button
         as="a"
         href="https://www.cinnamon.video"
